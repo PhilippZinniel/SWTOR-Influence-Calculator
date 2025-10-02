@@ -213,7 +213,7 @@ export default function InfluenceCalculator() {
             </div>
         </CardContent>
         <CardFooter>
-          <Button onClick={handleCalculate} className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button onClick={handleCalculate} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
             Calculate Gifts Needed
           </Button>
         </CardFooter>
