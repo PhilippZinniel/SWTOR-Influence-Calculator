@@ -2,13 +2,15 @@
 
 import { useState, useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { LEVEL_DATA, ITEM_XP, MAX_LEVEL, MIN_LEVEL } from '@/lib/swtor-data';
-import { Gift, Box, Package, ArrowRight, Calculator } from 'lucide-react';
+import { Gift, Box, Package, Calculator, MousePointerClick } from 'lucide-react';
 import { Separator } from './ui/separator';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { ScrollArea } from './ui/scroll-area';
+import { cn } from '@/lib/utils';
+
 
 type CalculationResult = {
   totalXpNeeded: number;
@@ -19,33 +21,29 @@ type CalculationResult = {
 
 export default function InfluenceCalculator() {
   const { toast } = useToast();
-  const [startLevel, setStartLevel] = useState<number | string>(MIN_LEVEL);
-  const [targetLevel, setTargetLevel] = useState<number | string>(MAX_LEVEL);
+  const [startLevel, setStartLevel] = useState<number>(MIN_LEVEL);
+  const [targetLevel, setTargetLevel] = useState<number>(MAX_LEVEL);
   const [result, setResult] = useState<CalculationResult | null>(null);
+  const [isSelectingStart, setIsSelectingStart] = useState(true);
+
+  const handleLevelSelect = (level: number) => {
+    if (isSelectingStart) {
+      setStartLevel(level);
+      setTargetLevel(level > targetLevel ? level : targetLevel);
+      setIsSelectingStart(false);
+    } else {
+      if (level < startLevel) {
+        setTargetLevel(startLevel);
+        setStartLevel(level);
+      } else {
+        setTargetLevel(level);
+      }
+      setIsSelectingStart(true);
+    }
+  };
 
   const handleCalculate = () => {
-    const start = typeof startLevel === 'string' ? parseInt(startLevel, 10) : startLevel;
-    const target = typeof targetLevel === 'string' ? parseInt(targetLevel, 10) : targetLevel;
-    
-    if (isNaN(start) || isNaN(target)) {
-      toast({
-        variant: "destructive",
-        title: "Invalid Input",
-        description: "Please enter valid numbers for start and target levels.",
-      });
-      return;
-    }
-
-    if (start < MIN_LEVEL || target > MAX_LEVEL || start > MAX_LEVEL || target < MIN_LEVEL) {
-      toast({
-        variant: "destructive",
-        title: "Invalid Levels",
-        description: `Levels must be between ${MIN_LEVEL} and ${MAX_LEVEL}.`,
-      });
-      return;
-    }
-    
-    if (start >= target) {
+    if (startLevel >= targetLevel) {
       toast({
         variant: "destructive",
         title: "Invalid Range",
@@ -55,7 +53,7 @@ export default function InfluenceCalculator() {
     }
 
     let totalXpNeeded = 0;
-    for (let i = start - 1; i < target - 1; i++) {
+    for (let i = startLevel - 1; i < targetLevel - 1; i++) {
       totalXpNeeded += LEVEL_DATA[i].xpToNextLevel;
     }
     
@@ -82,36 +80,55 @@ export default function InfluenceCalculator() {
       <Card className="shadow-lg border-primary/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-2"><Calculator size={24} /> Configuration</CardTitle>
-          <CardDescription>Select your starting and target influence levels.</CardDescription>
+          <CardDescription>
+            {isSelectingStart ? "Select your starting influence level." : "Select your target influence level."}
+          </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="flex items-center justify-center gap-4">
-            <div className="flex-1 space-y-2">
-              <Label htmlFor="start-level" className="text-center block">Start Level</Label>
-              <Input
-                id="start-level"
-                type="number"
-                value={startLevel}
-                onChange={(e) => setStartLevel(e.target.value === '' ? '' : parseInt(e.target.value, 10))}
-                min={MIN_LEVEL}
-                max={MAX_LEVEL}
-                className="text-center text-lg font-bold"
-              />
+        <CardContent className="space-y-4">
+            <div className='flex justify-around p-2 bg-secondary rounded-md'>
+                <div className='text-center'>
+                    <p className='text-sm text-muted-foreground'>Start Level</p>
+                    <p className='text-lg font-bold'>{startLevel}</p>
+                </div>
+                <div className='text-center'>
+                    <p className='text-sm text-muted-foreground'>Target Level</p>
+                    <p className='text-lg font-bold'>{targetLevel}</p>
+                </div>
             </div>
-            <ArrowRight className="mt-8 text-muted-foreground shrink-0" size={24}/>
-            <div className="flex-1 space-y-2">
-              <Label htmlFor="target-level" className="text-center block">Target Level</Label>
-              <Input
-                id="target-level"
-                type="number"
-                value={targetLevel}
-                onChange={(e) => setTargetLevel(e.target.value === '' ? '' : parseInt(e.target.value, 10))}
-                min={MIN_LEVEL}
-                max={MAX_LEVEL}
-                className="text-center text-lg font-bold"
-              />
-            </div>
-          </div>
+          <ScrollArea className="h-[300px] border rounded-md">
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead>Level</TableHead>
+                        <TableHead className='text-right'>XP to Next</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    {LEVEL_DATA.map(({level, xpToNextLevel}) => {
+                        const isSelectedStart = level === startLevel;
+                        const isSelectedTarget = level === targetLevel;
+                        const isInRange = level > startLevel && level < targetLevel;
+                        
+                        return (
+                             <TableRow 
+                                key={level} 
+                                onClick={() => handleLevelSelect(level)}
+                                className={cn(
+                                    "cursor-pointer",
+                                    isSelectedStart && "bg-primary/20 hover:bg-primary/30",
+                                    isSelectedTarget && "bg-primary/20 hover:bg-primary/30",
+                                    isInRange && "bg-primary/10",
+                                    !isSelectingStart && level === startLevel && "ring-2 ring-primary"
+                                )}
+                             >
+                                <TableCell className='font-medium'>{level}</TableCell>
+                                <TableCell className='text-right'>{xpToNextLevel > 0 ? xpToNextLevel.toLocaleString() : 'Max'}</TableCell>
+                             </TableRow>
+                        )
+                    })}
+                </TableBody>
+            </Table>
+          </ScrollArea>
         </CardContent>
         <CardFooter>
           <Button onClick={handleCalculate} className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
@@ -145,8 +162,9 @@ export default function InfluenceCalculator() {
               </div>
             </div>
           ) : (
-            <div className="flex items-center justify-center h-full text-muted-foreground py-16">
-              <p>Enter levels and calculate to see results.</p>
+            <div className="flex flex-col items-center justify-center h-full text-muted-foreground py-16">
+              <MousePointerClick size={48} className="mb-4" />
+              <p>Select a range and calculate to see results.</p>
             </div>
           )}
         </CardContent>
