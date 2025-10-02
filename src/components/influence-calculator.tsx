@@ -75,16 +75,15 @@ export default function InfluenceCalculator() {
         xpRange.premium.min = Math.min(xpRange.premium.min, itemXpForLevel.premium);
         xpRange.premium.max = Math.max(xpRange.premium.max, itemXpForLevel.premium);
 
-        // For a more accurate calculation of how many gifts of a single type are needed,
-        // we'll calculate the average XP gain across the range.
         totalArtifactXp += itemXpForLevel.artifact;
         totalPrototypeXp += itemXpForLevel.prototype;
         totalPremiumXp += itemXpForLevel.premium;
     }
-
-    const avgArtifactXp = totalArtifactXp / selectedLevels.length;
-    const avgPrototypeXp = totalPrototypeXp / selectedLevels.length;
-    const avgPremiumXp = totalPremiumXp / selectedLevels.length;
+    
+    const numLevels = selectedLevels.length;
+    const avgArtifactXp = totalArtifactXp / numLevels;
+    const avgPrototypeXp = totalPrototypeXp / numLevels;
+    const avgPremiumXp = totalPremiumXp / numLevels;
     
     const artifactCount = Math.ceil(totalXpNeeded / avgArtifactXp);
     const prototypeCount = Math.ceil(totalXpNeeded / avgPrototypeXp);
@@ -101,7 +100,7 @@ export default function InfluenceCalculator() {
   
   
   const levelOptions = LEVEL_DATA.map(l => l.level).filter(l => l < MAX_LEVEL);
-  const targetLevelOptions = LEVEL_DATA.map(l => l.level).filter(l => l > MIN_LEVEL && l > startLevel);
+  const targetLevelOptions = LEVEL_DATA.map(l => l.level).filter(l => l > MIN_LEVEL && l >= startLevel);
 
 
   return (
@@ -238,7 +237,7 @@ export default function InfluenceCalculator() {
 }
 
 function GiftItem({ rarity, gifts, count, color, xpRange }: { rarity: string, gifts: GiftInfo[], count: number, color: string, xpRange: { min: number, max: number } }) {
-  if (count === 0) return null;
+  if (count === 0 || !isFinite(count)) return null;
   const gift = gifts[0];
   // @ts-ignore
   const IconComponent = LucideIcons[gift.icon] || LucideIcons.Gift;
