@@ -200,9 +200,9 @@ export default function InfluenceCalculator() {
               </div>
               <Separator />
               <div className="space-y-3">
-                 <GiftItem rarity="Artifact" count={result.artifactCount} icon={<Gift className="text-purple-400"/>} xp={ITEM_XP.ARTIFACT} />
-                 <GiftItem rarity="Prototype" count={result.prototypeCount} icon={<Box className="text-blue-400"/>} xp={ITEM_XP.PROTOTYPE}/>
-                 <GiftItem rarity="Premium" count={result.premiumCount} icon={<Package className="text-green-400"/>} xp={ITEM_XP.PREMIUM}/>
+                 <GiftItem rarity="Artifact" giftName={selectedCompanion.gifts.artifact} count={result.artifactCount} icon={<Gift className="text-purple-400"/>} xp={ITEM_XP.ARTIFACT} />
+                 <GiftItem rarity="Prototype" giftName={selectedCompanion.gifts.prototype} count={result.prototypeCount} icon={<Box className="text-blue-400"/>} xp={ITEM_XP.PROTOTYPE}/>
+                 <GiftItem rarity="Premium" giftName={selectedCompanion.gifts.premium} count={result.premiumCount} icon={<Package className="text-green-400"/>} xp={ITEM_XP.PREMIUM}/>
               </div>
               <Separator />
               <div className="text-center p-4 bg-secondary rounded-lg">
@@ -222,14 +222,14 @@ export default function InfluenceCalculator() {
   );
 }
 
-function GiftItem({ rarity, count, icon, xp }: { rarity: string, count: number, icon: React.ReactNode, xp: number }) {
+function GiftItem({ rarity, giftName, count, icon, xp }: { rarity: string, giftName: string, count: number, icon: React.ReactNode, xp: number }) {
   if (count === 0) return null;
   return (
     <div className="flex items-center justify-between p-3 bg-background rounded-md border">
         <div className="flex items-center gap-3">
             {icon}
             <div>
-                <p className="font-semibold">{rarity}</p>
+                <p className="font-semibold">{rarity} <span className='text-sm text-muted-foreground'>({giftName})</span></p>
                 <p className="text-xs text-muted-foreground">{xp.toLocaleString()} XP each</p>
             </div>
         </div>

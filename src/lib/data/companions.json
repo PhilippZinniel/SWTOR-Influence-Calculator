@@ -2,31 +2,61 @@
   {
     "id": "2v-r8",
     "name": "2V-R8",
-    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/2vr8.jpg"
+    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/2vr8.jpg",
+    "gifts": {
+      "artifact": "Maintenance (Droid)",
+      "prototype": "Technology",
+      "premium": "Courting"
+    }
   },
   {
     "id": "c2-n2",
     "name": "C2-N2",
-    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/c2n2.jpg"
+    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/c2n2.jpg",
+    "gifts": {
+      "artifact": "Cultural Artifact",
+      "prototype": "Technology",
+      "premium": "Courting"
+    }
   },
   {
     "id": "khem-val",
     "name": "Khem Val",
-    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/khem-val.jpg"
+    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/khem-val.jpg",
+    "gifts": {
+      "artifact": "Cultural Artifact",
+      "prototype": "Weapon",
+      "premium": "Technology"
+    }
   },
   {
     "id": "vette",
     "name": "Vette",
-    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/vette.jpg"
+    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/vette.jpg",
+    "gifts": {
+      "artifact": "Underworld Good",
+      "prototype": "Technology",
+      "premium": "Imperial Memorabilia"
+    }
   },
   {
     "id": "mako",
     "name": "Mako",
-    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/mako.jpg"
+    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/mako.jpg",
+    "gifts": {
+      "artifact": "Technology",
+      "prototype": "Underworld Good",
+      "premium": "Luxury"
+    }
   },
   {
     "id": "kaliyo-djannis",
     "name": "Kaliyo Djannis",
-    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/kaliyo.jpg"
+    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/kaliyo.jpg",
+    "gifts": {
+      "artifact": "Weapon",
+      "prototype": "Underworld Good",
+      "premium": "Luxury"
+    }
   }
 ]
