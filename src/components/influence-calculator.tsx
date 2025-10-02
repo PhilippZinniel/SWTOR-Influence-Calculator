@@ -7,7 +7,6 @@ import { useToast } from "@/hooks/use-toast";
 import { LEVEL_DATA, ITEM_XP, MAX_LEVEL, MIN_LEVEL } from '@/lib/swtor-data';
 import { Gift, Box, Package, Calculator, MousePointerClick } from 'lucide-react';
 import { Separator } from './ui/separator';
-import { ScrollArea } from './ui/scroll-area';
 import { cn } from '@/lib/utils';
 
 
@@ -94,8 +93,7 @@ export default function InfluenceCalculator() {
                     <p className='text-lg font-bold'>{targetLevel}</p>
                 </div>
             </div>
-          <ScrollArea className="h-[340px] border rounded-md p-2">
-            <div className="grid grid-cols-5 gap-2">
+            <div className="grid grid-cols-5 gap-2 border rounded-md p-2">
                 {LEVEL_DATA.map(({level}) => {
                     const isSelectedStart = level === startLevel;
                     const isSelectedTarget = level === targetLevel;
@@ -120,7 +118,6 @@ export default function InfluenceCalculator() {
                     )
                 })}
             </div>
-          </ScrollArea>
         </CardContent>
         <CardFooter>
           <Button onClick={handleCalculate} className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
