@@ -10,6 +10,7 @@ import { MAX_LEVEL, MIN_LEVEL, Companion, GiftInfo } from '@/lib/swtor-data';
 import * as LucideIcons from 'lucide-react';
 import { Separator } from './ui/separator';
 import { cn } from '@/lib/utils';
+import { Label } from '@/components/ui/label';
 
 import companionsData from '@/lib/data/companions.json';
 import influenceData from '@/lib/data/swtor-influence-data.json';
@@ -36,27 +37,10 @@ export default function InfluenceCalculator() {
   const [targetLevel, setTargetLevel] = useState<number>(MAX_LEVEL);
   const [selectedCompanionId, setSelectedCompanionId] = useState<string>(COMPANIONS[0].id);
   const [result, setResult] = useState<CalculationResult | null>(null);
-  const [isSelectingStart, setIsSelectingStart] = useState(true);
 
   const selectedCompanion = useMemo(() => {
     return COMPANIONS.find(c => c.id === selectedCompanionId) || COMPANIONS[0];
   }, [selectedCompanionId]);
-
-  const handleLevelSelect = (level: number) => {
-    if (isSelectingStart) {
-      setStartLevel(level);
-      setTargetLevel(level > targetLevel ? level : targetLevel);
-      setIsSelectingStart(false);
-    } else {
-      if (level < startLevel) {
-        setTargetLevel(startLevel);
-        setStartLevel(level);
-      } else {
-        setTargetLevel(level);
-      }
-      setIsSelectingStart(true);
-    }
-  };
 
   const handleCalculate = () => {
     if (startLevel >= targetLevel) {
@@ -91,9 +75,13 @@ export default function InfluenceCalculator() {
     if (!result) return 0;
     return result.artifactCount + result.prototypeCount + result.premiumCount;
   }, [result]);
+  
+  const levelOptions = LEVEL_DATA.map(l => l.level).filter(l => l < MAX_LEVEL);
+  const targetLevelOptions = LEVEL_DATA.map(l => l.level).filter(l => l > MIN_LEVEL && l > startLevel);
+
 
   return (
-    <div className="grid grid-cols-1 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       <Card className="shadow-lg border-primary/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-2"><LucideIcons.Calculator size={24} /> Configuration</CardTitle>
@@ -101,82 +89,81 @@ export default function InfluenceCalculator() {
             Select a companion and your desired influence level range.
           </CardDescription>
         </CardHeader>
-        <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="space-y-2">
-                  <label className="text-sm font-medium">Companion</label>
-                  <Select value={selectedCompanionId} onValueChange={setSelectedCompanionId}>
-                      <SelectTrigger className="w-full">
-                          <SelectValue placeholder="Select a companion">
-                              <div className="flex items-center gap-3">
-                                  <Image 
-                                      src={selectedCompanion.imageUrl}
-                                      alt={selectedCompanion.name}
-                                      width={24}
-                                      height={24}
-                                      className="rounded-full"
-                                  />
-                                  <span>{selectedCompanion.name}</span>
-                              </div>
-                          </SelectValue>
-                      </SelectTrigger>
-                      <SelectContent>
-                          {COMPANIONS.map((companion) => (
-                              <SelectItem key={companion.id} value={companion.id}>
-                                  <div className="flex items-center gap-3">
-                                      <Image 
-                                          src={companion.imageUrl}
-                                          alt={companion.name}
-                                          width={24}
-                                          height={24}
-                                          className="rounded-full"
-                                      />
-                                      <span>{companion.name}</span>
-                                  </div>
-                              </SelectItem>
-                          ))}
-                      </SelectContent>
-                  </Select>
-              </div>
-              <CardDescription>
-                  {isSelectingStart ? "Select your starting influence level." : "Select your target influence level."}
-              </CardDescription>
-              <div className='flex justify-around p-2 bg-secondary rounded-md'>
-                  <div className='text-center'>
-                      <p className='text-sm text-muted-foreground'>Start Level</p>
-                      <p className='text-lg font-bold'>{startLevel}</p>
-                  </div>
-                  <div className='text-center'>
-                      <p className='text-sm text-muted-foreground'>Target Level</p>
-                      <p className='text-lg font-bold'>{targetLevel}</p>
-                  </div>
-              </div>
+        <CardContent className="space-y-6">
+            <div className="space-y-2">
+                <Label>Companion</Label>
+                <Select value={selectedCompanionId} onValueChange={setSelectedCompanionId}>
+                    <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Select a companion">
+                            <div className="flex items-center gap-3">
+                                <Image 
+                                    src={selectedCompanion.imageUrl}
+                                    alt={selectedCompanion.name}
+                                    width={24}
+                                    height={24}
+                                    className="rounded-full"
+                                />
+                                <span>{selectedCompanion.name}</span>
+                            </div>
+                        </SelectValue>
+                    </SelectTrigger>
+                    <SelectContent>
+                        {COMPANIONS.map((companion) => (
+                            <SelectItem key={companion.id} value={companion.id}>
+                                <div className="flex items-center gap-3">
+                                    <Image 
+                                        src={companion.imageUrl}
+                                        alt={companion.name}
+                                        width={24}
+                                        height={24}
+                                        className="rounded-full"
+                                    />
+                                    <span>{companion.name}</span>
+                                </div>
+                            </SelectItem>
+                        ))}
+                    </SelectContent>
+                </Select>
             </div>
-            <div className="grid grid-cols-10 gap-2 border rounded-md p-2 h-fit">
-                {LEVEL_DATA.map(({level}) => {
-                    const isSelectedStart = level === startLevel;
-                    const isSelectedTarget = level === targetLevel;
-                    const isInRange = level > startLevel && level < targetLevel;
-                    
-                    return (
-                         <div
-                            key={level} 
-                            onClick={() => handleLevelSelect(level)}
-                            className={cn(
-                                "flex items-center justify-center h-10 text-center font-medium border rounded-md cursor-pointer transition-colors",
-                                isSelectedStart && "bg-primary/20 text-primary-foreground ring-2 ring-primary",
-                                isSelectedTarget && "bg-primary/20 text-primary-foreground ring-2 ring-primary",
-                                isInRange && "bg-primary/10",
-                                !isSelectingStart && level === startLevel && "ring-2 ring-accent",
-                                !isSelectedStart && !isSelectingStart && level > startLevel && "hover:bg-primary/10",
-                                !isSelectingStart && level < startLevel && "hover:bg-primary/10",
-                                isSelectingStart && "hover:bg-primary/10"
-                            )}
-                         >
-                            {level}
-                         </div>
-                    )
-                })}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="start-level">Start Level</Label>
+                <Select
+                  value={String(startLevel)}
+                  onValueChange={(value) => {
+                    const newStartLevel = Number(value);
+                    setStartLevel(newStartLevel);
+                    if (newStartLevel >= targetLevel) {
+                      setTargetLevel(newStartLevel + 1 > MAX_LEVEL ? MAX_LEVEL : newStartLevel + 1);
+                    }
+                  }}
+                >
+                  <SelectTrigger id="start-level">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {levelOptions.map(level => (
+                      <SelectItem key={`start-${level}`} value={String(level)}>{level}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="target-level">Target Level</Label>
+                <Select
+                  value={String(targetLevel)}
+                  onValueChange={(value) => setTargetLevel(Number(value))}
+                >
+                  <SelectTrigger id="target-level">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {targetLevelOptions.map(level => (
+                      <SelectItem key={`target-${level}`} value={String(level)}>{level}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
         </CardContent>
         <CardFooter>
@@ -250,3 +237,5 @@ function GiftItem({ rarity, gifts, count, color, xp }: { rarity: string, gifts: 
     </div>
   )
 }
+
+    
