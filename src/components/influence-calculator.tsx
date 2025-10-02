@@ -227,7 +227,7 @@ export default function InfluenceCalculator() {
         <CardContent>
           {result ? (
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 bg-secondary rounded-lg">
+              <div className="flex items-center gap-4 p-4 rounded-lg">
                   <Image 
                       src={selectedCompanion.imageUrl}
                       alt={selectedCompanion.name}
