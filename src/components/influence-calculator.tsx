@@ -117,7 +117,7 @@ export default function InfluenceCalculator() {
 
   return (
     <div className="space-y-8">
-      <Card className="shadow-lg border-primary/20">
+      <Card className="shadow-lg border-primary/20 bg-card/80 backdrop-blur-sm">
         <CardHeader>
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
             <div className='flex-1'>
@@ -219,7 +219,7 @@ export default function InfluenceCalculator() {
         </CardFooter>
       </Card>
 
-      <Card className="shadow-lg border-primary/20">
+      <Card className="shadow-lg border-primary/20 bg-card/80 backdrop-blur-sm">
         <CardHeader>
           <CardTitle>Results</CardTitle>
           <CardDescription>Gifts needed to go from level {startLevel} to {targetLevel} for {selectedCompanion.name}.</CardDescription>
@@ -296,3 +296,5 @@ function GiftItem({ rarity, gift, count, xpRange }: { rarity: string, gift: Gift
     </div>
   )
 }
+
+    
