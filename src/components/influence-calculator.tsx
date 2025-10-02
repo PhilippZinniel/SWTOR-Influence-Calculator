@@ -120,7 +120,7 @@ export default function InfluenceCalculator() {
       <Card className="shadow-lg border-primary/20">
         <CardHeader>
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-            <div className='flex-grow'>
+            <div className='flex-1'>
               <CardTitle className="flex items-center gap-2"><LucideIcons.Calculator size={24} /> Configuration</CardTitle>
               <CardDescription>
                 Select a companion and your desired influence level range.
