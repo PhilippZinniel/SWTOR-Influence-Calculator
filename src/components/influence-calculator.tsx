@@ -11,6 +11,9 @@ import * as LucideIcons from 'lucide-react';
 import { Separator } from './ui/separator';
 import { cn } from '@/lib/utils';
 import { Label } from '@/components/ui/label';
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Info } from "lucide-react";
+
 
 import companionsData from '@/lib/data/companions.json';
 import influenceData from '@/lib/data/swtor-influence-data.json';
@@ -205,6 +208,28 @@ export default function InfluenceCalculator() {
         </CardFooter>
       </Card>
       
+      <Alert>
+          <Info className="h-4 w-4" />
+          <AlertTitle>Important Note</AlertTitle>
+          <AlertDescription>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
+              <div className="flex-grow">
+                For these calculations to be accurate, you must have the <strong>Legacy of Altruism III</strong> character perk. 
+                This provides a +30% boost to influence gains from companion gifts. The total cost for all three ranks is 90,000 credits.
+              </div>
+              <a href="https://swtorista.com/articles/swtor-legacy-perks-guide/" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src="https://swtorista.com/articles/wp-content/uploads/2023/11/legacyofaltruism3.png"
+                  alt="Legacy of Altruism III Perk"
+                  width={250}
+                  height={85}
+                  className="rounded-md mt-2 sm:mt-0"
+                />
+              </a>
+            </div>
+          </AlertDescription>
+        </Alert>
+
       <Card className="shadow-lg border-primary/20">
         <CardHeader>
           <CardTitle>Results</CardTitle>
