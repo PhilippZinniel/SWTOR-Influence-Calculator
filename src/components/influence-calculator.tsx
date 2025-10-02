@@ -24,10 +24,10 @@ type CalculationResult = {
   artifactCount: number;
   prototypeCount: number;
   premiumCount: number;
-  itemXp: { // Note: This is now an approximation for display, using start level values.
-    artifact: number;
-    prototype: number;
-    premium: number;
+  xpRange: {
+    artifact: { min: number; max: number };
+    prototype: { min: number; max: number };
+    premium: { min: number; max: number };
   };
 };
 
@@ -57,11 +57,27 @@ export default function InfluenceCalculator() {
     let totalPrototypes = 0;
     let totalPremiums = 0;
 
-    for (let i = startLevel - 1; i < targetLevel - 1; i++) {
-      let xpForLevel = LEVEL_DATA[i].xpToNextLevel;
+    const selectedLevels = LEVEL_DATA.slice(startLevel - 1, targetLevel - 1);
+
+    const xpRange = {
+      artifact: { min: Infinity, max: -Infinity },
+      prototype: { min: Infinity, max: -Infinity },
+      premium: { min: Infinity, max: -Infinity },
+    };
+
+    for (const level of selectedLevels) {
+      let xpForLevel = level.xpToNextLevel;
       totalXpNeeded += xpForLevel;
-      
-      const itemXpForLevel = LEVEL_DATA[i].itemXp;
+
+      const itemXpForLevel = level.itemXp;
+
+      // Update XP ranges
+      xpRange.artifact.min = Math.min(xpRange.artifact.min, itemXpForLevel.artifact);
+      xpRange.artifact.max = Math.max(xpRange.artifact.max, itemXpForLevel.artifact);
+      xpRange.prototype.min = Math.min(xpRange.prototype.min, itemXpForLevel.prototype);
+      xpRange.prototype.max = Math.max(xpRange.prototype.max, itemXpForLevel.prototype);
+      xpRange.premium.min = Math.min(xpRange.premium.min, itemXpForLevel.premium);
+      xpRange.premium.max = Math.max(xpRange.premium.max, itemXpForLevel.premium);
       
       const artifactCount = Math.floor(xpForLevel / itemXpForLevel.artifact);
       xpForLevel %= itemXpForLevel.artifact;
@@ -76,15 +92,12 @@ export default function InfluenceCalculator() {
       totalPremiums += premiumCount;
     }
     
-    // For display purposes, we'll show the XP/item for the starting level.
-    const displayItemXp = LEVEL_DATA[startLevel - 1].itemXp;
-
     setResult({ 
       totalXpNeeded, 
       artifactCount: totalArtifacts, 
       prototypeCount: totalPrototypes, 
       premiumCount: totalPremiums,
-      itemXp: displayItemXp 
+      xpRange
     });
   };
   
@@ -213,9 +226,9 @@ export default function InfluenceCalculator() {
               </div>
               <Separator />
               <div className="space-y-3">
-                 <GiftItem rarity="Artifact" gifts={selectedCompanion.gifts.artifact} count={result.artifactCount} color="text-purple-400" xp={result.itemXp.artifact} />
-                 <GiftItem rarity="Prototype" gifts={selectedCompanion.gifts.prototype} count={result.prototypeCount} color="text-blue-400" xp={result.itemXp.prototype}/>
-                 <GiftItem rarity="Premium" gifts={selectedCompanion.gifts.premium} count={result.premiumCount} color="text-green-400" xp={result.itemXp.premium}/>
+                 <GiftItem rarity="Artifact" gifts={selectedCompanion.gifts.artifact} count={result.artifactCount} color="text-purple-400" xpRange={result.xpRange.artifact} />
+                 <GiftItem rarity="Prototype" gifts={selectedCompanion.gifts.prototype} count={result.prototypeCount} color="text-blue-400" xpRange={result.xpRange.prototype} />
+                 <GiftItem rarity="Premium" gifts={selectedCompanion.gifts.premium} count={result.premiumCount} color="text-green-400" xpRange={result.xpRange.premium} />
               </div>
               <Separator />
               <div className="text-center p-4 bg-secondary rounded-lg">
@@ -235,11 +248,15 @@ export default function InfluenceCalculator() {
   );
 }
 
-function GiftItem({ rarity, gifts, count, color, xp }: { rarity: string, gifts: GiftInfo[], count: number, color: string, xp: number }) {
+function GiftItem({ rarity, gifts, count, color, xpRange }: { rarity: string, gifts: GiftInfo[], count: number, color: string, xpRange: { min: number, max: number } }) {
   if (count === 0) return null;
   const gift = gifts[0];
   // @ts-ignore
   const IconComponent = LucideIcons[gift.icon] || LucideIcons.Gift;
+
+  const xpText = xpRange.min === xpRange.max
+    ? `${xpRange.min.toLocaleString()} XP each`
+    : `${xpRange.min.toLocaleString()} - ${xpRange.max.toLocaleString()} XP each`;
 
   return (
     <div className="flex items-center justify-between p-3 bg-background rounded-md border">
@@ -247,7 +264,7 @@ function GiftItem({ rarity, gifts, count, color, xp }: { rarity: string, gifts: 
             <IconComponent className={cn("h-6 w-6", color)} />
             <div>
                 <p className="font-semibold">{rarity} <span className='text-sm text-muted-foreground'>({gift.name}{gift.type && ` - ${gift.type}`})</span></p>
-                <p className="text-xs text-muted-foreground">{xp.toLocaleString()} XP each (at start level)</p>
+                <p className="text-xs text-muted-foreground">{xpText}</p>
             </div>
         </div>
         <p className="text-lg font-bold">{count.toLocaleString()}</p>
