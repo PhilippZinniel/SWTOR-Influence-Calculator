@@ -18,7 +18,7 @@ import { AlertTriangle } from "lucide-react";
 import companionsData from '@/lib/data/companions.json';
 import influenceData from '@/lib/data/swtor-influence-data.json';
 
-const COMPANIONS: Companion[] = companionsData;
+const COMPANIONS: Companion[] = companionsData.companions;
 const LEVEL_DATA = influenceData.levels;
 
 
@@ -242,9 +242,9 @@ export default function InfluenceCalculator() {
               </div>
               <Separator />
               <div className="space-y-3">
-                 <GiftItem rarity="Artifact" gifts={selectedCompanion.gifts.artifact} count={result.artifactCount} color="text-purple-400" xpRange={result.xpRange.artifact} />
-                 <GiftItem rarity="Prototype" gifts={selectedCompanion.gifts.prototype} count={result.prototypeCount} color="text-blue-400" xpRange={result.xpRange.prototype} />
-                 <GiftItem rarity="Premium" gifts={selectedCompanion.gifts.premium} count={result.premiumCount} color="text-green-400" xpRange={result.xpRange.premium} />
+                 <GiftItem rarity="Artifact" gift={selectedCompanion.gifts.artifact} count={result.artifactCount} color="purple-400" xpRange={result.xpRange.artifact} />
+                 <GiftItem rarity="Prototype" gift={selectedCompanion.gifts.prototype} count={result.prototypeCount} color="blue-400" xpRange={result.xpRange.prototype} />
+                 <GiftItem rarity="Premium" gift={selectedCompanion.gifts.premium} count={result.premiumCount} color="green-400" xpRange={result.xpRange.premium} />
               </div>
             </div>
           ) : (
@@ -259,12 +259,9 @@ export default function InfluenceCalculator() {
   );
 }
 
-function GiftItem({ rarity, gifts, count, color, xpRange }: { rarity: string, gifts: GiftInfo[], count: number, color: string, xpRange: { min: number, max: number } }) {
+function GiftItem({ rarity, gift, count, color, xpRange }: { rarity: string, gift: GiftInfo, count: number, color: string, xpRange: { min: number, max: number } }) {
   if (count === 0 || !isFinite(count)) return null;
-  const gift = gifts[0];
-  // @ts-ignore
-  const IconComponent = LucideIcons[gift.icon] || LucideIcons.Gift;
-
+  
   const xpText = xpRange.min === xpRange.max
     ? `${xpRange.min.toLocaleString()} XP each`
     : `${xpRange.min.toLocaleString()} - ${xpRange.max.toLocaleString()} XP each`;
@@ -272,7 +269,16 @@ function GiftItem({ rarity, gifts, count, color, xpRange }: { rarity: string, gi
   return (
     <div className="flex items-center justify-between p-3 bg-background rounded-md border">
         <div className="flex items-center gap-3">
-            <IconComponent className={cn("h-6 w-6", color)} />
+             <Image 
+                src={gift.imageUrl}
+                alt={gift.name}
+                width={40}
+                height={40}
+                className={cn('rounded-md border-2 p-0.5', `border-${color}`)}
+                style={{
+                  backgroundColor: `hsl(var(--${rarity.toLowerCase()}-bg, var(--background)))`
+                }}
+             />
             <div>
                 <p className="font-semibold">{rarity} <span className='text-sm text-muted-foreground'>({gift.name}{gift.type && ` - ${gift.type}`})</span></p>
                 <p className="text-xs text-muted-foreground">{xpText}</p>

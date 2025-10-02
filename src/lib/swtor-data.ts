@@ -11,9 +11,9 @@ export type LevelData = {
 };
 
 export type GiftInfo = {
-  icon: string;
   name: string;
   type: string;
+  imageUrl: string;
 };
 
 export type Companion = {
@@ -21,9 +21,9 @@ export type Companion = {
   name: string;
   imageUrl: string;
   gifts: {
-    artifact: GiftInfo[];
-    prototype: GiftInfo[];
-    premium: GiftInfo[];
+    artifact: GiftInfo;
+    prototype: GiftInfo;
+    premium: GiftInfo;
   }
 };
 

@@ -1,170 +1,136 @@
-[
-  {
-    "id": "2v-r8",
-    "name": "2V-R8",
-    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/2vr8.jpg",
-    "gifts": {
-      "artifact": [
-        {
-          "icon": "Wrench",
+{
+  "companions": [
+    {
+      "id": "2v-r8",
+      "name": "2V-R8",
+      "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/2vr8.jpg",
+      "gifts": {
+        "artifact": {
           "name": "Maintenance",
-          "type": "Droid"
-        }
-      ],
-      "prototype": [
-        {
-          "icon": "Cpu",
+          "type": "Droid",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/maintenance-purple.png"
+        },
+        "prototype": {
           "name": "Technology",
-          "type": ""
-        }
-      ],
-      "premium": [
-        {
-          "icon": "Heart",
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/technology-blue.png"
+        },
+        "premium": {
           "name": "Courting",
-          "type": ""
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/courting-green.png"
         }
-      ]
-    }
-  },
-  {
-    "id": "c2-n2",
-    "name": "C2-N2",
-    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/c2n2.jpg",
-    "gifts": {
-      "artifact": [
-        {
-          "icon": "Scroll",
+      }
+    },
+    {
+      "id": "c2-n2",
+      "name": "C2-N2",
+      "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/c2n2.jpg",
+      "gifts": {
+        "artifact": {
           "name": "Cultural Artifact",
-          "type": ""
-        }
-      ],
-      "prototype": [
-        {
-          "icon": "Cpu",
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/cultural-artifact-purple.png"
+        },
+        "prototype": {
           "name": "Technology",
-          "type": ""
-        }
-      ],
-      "premium": [
-        {
-          "icon": "Heart",
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/technology-blue.png"
+        },
+        "premium": {
           "name": "Courting",
-          "type": ""
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/courting-green.png"
         }
-      ]
-    }
-  },
-  {
-    "id": "khem-val",
-    "name": "Khem Val",
-    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/khem-val.jpg",
-    "gifts": {
-      "artifact": [
-        {
-          "icon": "Scroll",
+      }
+    },
+    {
+      "id": "khem-val",
+      "name": "Khem Val",
+      "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/khem-val.jpg",
+      "gifts": {
+        "artifact": {
           "name": "Cultural Artifact",
-          "type": ""
-        }
-      ],
-      "prototype": [
-        {
-          "icon": "Sword",
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/cultural-artifact-purple.png"
+        },
+        "prototype": {
           "name": "Weapon",
-          "type": ""
-        }
-      ],
-      "premium": [
-        {
-          "icon": "Cpu",
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/weapon-blue.png"
+        },
+        "premium": {
           "name": "Technology",
-          "type": ""
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/technology-green.png"
         }
-      ]
-    }
-  },
-  {
-    "id": "vette",
-    "name": "Vette",
-    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/vette.jpg",
-    "gifts": {
-      "artifact": [
-        {
-          "icon": "PersonStanding",
+      }
+    },
+    {
+      "id": "vette",
+      "name": "Vette",
+      "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/vette.jpg",
+      "gifts": {
+        "artifact": {
           "name": "Underworld Good",
-          "type": ""
-        }
-      ],
-      "prototype": [
-        {
-          "icon": "Cpu",
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/underworld-good-purple.png"
+        },
+        "prototype": {
           "name": "Technology",
-          "type": ""
-        }
-      ],
-      "premium": [
-        {
-          "icon": "Medal",
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/technology-blue.png"
+        },
+        "premium": {
           "name": "Imperial Memorabilia",
-          "type": ""
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/imperial-memorabilia-green.png"
         }
-      ]
-    }
-  },
-  {
-    "id": "mako",
-    "name": "Mako",
-    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/mako.jpg",
-    "gifts": {
-      "artifact": [
-        {
-          "icon": "Cpu",
+      }
+    },
+    {
+      "id": "mako",
+      "name": "Mako",
+      "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/mako.jpg",
+      "gifts": {
+        "artifact": {
           "name": "Technology",
-          "type": ""
-        }
-      ],
-      "prototype": [
-        {
-          "icon": "PersonStanding",
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/technology-purple.png"
+        },
+        "prototype": {
           "name": "Underworld Good",
-          "type": ""
-        }
-      ],
-      "premium": [
-        {
-          "icon": "Gem",
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/underworld-good-blue.png"
+        },
+        "premium": {
           "name": "Luxury",
-          "type": ""
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/luxury-green.png"
         }
-      ]
-    }
-  },
-  {
-    "id": "kaliyo-djannis",
-    "name": "Kaliyo Djannis",
-    "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/kaliyo.jpg",
-    "gifts": {
-      "artifact": [
-        {
-          "icon": "Sword",
+      }
+    },
+    {
+      "id": "kaliyo-djannis",
+      "name": "Kaliyo Djannis",
+      "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/kaliyo.jpg",
+      "gifts": {
+        "artifact": {
           "name": "Weapon",
-          "type": ""
-        }
-      ],
-      "prototype": [
-        {
-          "icon": "PersonStanding",
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/weapon-purple.png"
+        },
+        "prototype": {
           "name": "Underworld Good",
-          "type": ""
-        }
-      ],
-      "premium": [
-        {
-          "icon": "Gem",
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/underworld-good-blue.png"
+        },
+        "premium": {
           "name": "Luxury",
-          "type": ""
+          "type": "",
+          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/luxury-green.png"
         }
-      ]
+      }
     }
-  }
-]
+  ]
+}
