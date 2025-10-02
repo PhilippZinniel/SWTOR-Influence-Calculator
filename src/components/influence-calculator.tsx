@@ -12,7 +12,7 @@ import { Separator } from './ui/separator';
 import { cn } from '@/lib/utils';
 import { Label } from '@/components/ui/label';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Info, AlertTriangle } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 
 
 import companionsData from '@/lib/data/companions.json';
@@ -126,10 +126,10 @@ export default function InfluenceCalculator() {
                 Select a companion and your desired influence level range.
               </CardDescription>
             </div>
-            <Alert className="p-3 border-accent/50 text-accent-foreground [&>svg]:text-accent-foreground max-w-md">
+            <Alert className="p-3 bg-accent/10 border-accent/50 text-accent-foreground [&>svg]:text-yellow-400 max-w-md">
               <AlertTriangle className="h-4 w-4" />
-              <AlertTitle className="text-sm font-semibold">Legacy Perk Required</AlertTitle>
-              <AlertDescription className="text-xs">
+              <AlertTitle className="text-sm font-semibold text-yellow-400">Legacy Perk Required</AlertTitle>
+              <AlertDescription className="text-xs text-muted-foreground">
                 Calculations require <strong>Legacy of Altruism III</strong> for accuracy (+30% influence).
               </AlertDescription>
             </Alert>
