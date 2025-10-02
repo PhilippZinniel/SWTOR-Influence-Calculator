@@ -41,6 +41,12 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --gift-artifact-bg: 270 50% 15%;
+    --gift-artifact-border: 270 50% 35%;
+    --gift-prototype-bg: 220 50% 15%;
+    --gift-prototype-border: 220 50% 35%;
+    --gift-premium-bg: 140 50% 15%;
+    --gift-premium-border: 140 50% 35%;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -75,6 +81,12 @@ body {
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --gift-artifact-bg: 270 50% 15%;
+    --gift-artifact-border: 270 50% 45%;
+    --gift-prototype-bg: 220 50% 15%;
+    --gift-prototype-border: 220 50% 45%;
+    --gift-premium-bg: 140 50% 15%;
+    --gift-premium-border: 140 50% 45%;
   }
 }
 

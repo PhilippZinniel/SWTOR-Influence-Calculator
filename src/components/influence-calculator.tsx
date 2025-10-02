@@ -242,9 +242,9 @@ export default function InfluenceCalculator() {
               </div>
               <Separator />
               <div className="space-y-3">
-                 <GiftItem rarity="Artifact" gift={selectedCompanion.gifts.artifact} count={result.artifactCount} color="purple-400" xpRange={result.xpRange.artifact} />
-                 <GiftItem rarity="Prototype" gift={selectedCompanion.gifts.prototype} count={result.prototypeCount} color="blue-400" xpRange={result.xpRange.prototype} />
-                 <GiftItem rarity="Premium" gift={selectedCompanion.gifts.premium} count={result.premiumCount} color="green-400" xpRange={result.xpRange.premium} />
+                 <GiftItem rarity="Artifact" gift={selectedCompanion.gifts.artifact} count={result.artifactCount} xpRange={result.xpRange.artifact} />
+                 <GiftItem rarity="Prototype" gift={selectedCompanion.gifts.prototype} count={result.prototypeCount} xpRange={result.xpRange.prototype} />
+                 <GiftItem rarity="Premium" gift={selectedCompanion.gifts.premium} count={result.premiumCount} xpRange={result.xpRange.premium} />
               </div>
             </div>
           ) : (
@@ -259,24 +259,32 @@ export default function InfluenceCalculator() {
   );
 }
 
-function GiftItem({ rarity, gift, count, color, xpRange }: { rarity: string, gift: GiftInfo, count: number, color: string, xpRange: { min: number, max: number } }) {
+function GiftItem({ rarity, gift, count, xpRange }: { rarity: string, gift: GiftInfo, count: number, xpRange: { min: number, max: number } }) {
   if (count === 0 || !isFinite(count)) return null;
   
   const xpText = xpRange.min === xpRange.max
     ? `${xpRange.min.toLocaleString()} XP each`
     : `${xpRange.min.toLocaleString()} - ${xpRange.max.toLocaleString()} XP each`;
 
+  const rarityLower = rarity.toLowerCase();
+
   return (
-    <div className="flex items-center justify-between p-3 bg-background rounded-md border">
+    <div 
+        className="flex items-center justify-between p-3 rounded-md border"
+        style={{
+            backgroundColor: `hsl(var(--gift-${rarityLower}-bg))`,
+            borderColor: `hsl(var(--gift-${rarityLower}-border))`
+        }}
+    >
         <div className="flex items-center gap-3">
              <Image 
                 src={gift.imageUrl}
                 alt={gift.name}
                 width={40}
                 height={40}
-                className={cn('rounded-md border-2 p-0.5', `border-${color}`)}
+                className={'rounded-md border-2 p-0.5'}
                 style={{
-                  backgroundColor: `hsl(var(--${rarity.toLowerCase()}-bg, var(--background)))`
+                    borderColor: `hsl(var(--gift-${rarityLower}-border))`
                 }}
              />
             <div>
