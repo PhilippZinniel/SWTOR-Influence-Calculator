@@ -6,10 +6,16 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription }
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { LEVEL_DATA, ITEM_XP, MAX_LEVEL, MIN_LEVEL, COMPANIONS, Companion } from '@/lib/swtor-data';
-import { Gift, Box, Package, Calculator, MousePointerClick, Users } from 'lucide-react';
+import { MAX_LEVEL, MIN_LEVEL, Companion } from '@/lib/swtor-data';
+import { Gift, Box, Package, Calculator, MousePointerClick } from 'lucide-react';
 import { Separator } from './ui/separator';
 import { cn } from '@/lib/utils';
+
+import companionsData from '@/lib/data/companions.json';
+import influenceData from '@/lib/data/swtor-influence-data.json';
+
+const COMPANIONS: Companion[] = companionsData;
+const { levels: LEVEL_DATA, itemXp: ITEM_XP } = influenceData;
 
 
 type CalculationResult = {
