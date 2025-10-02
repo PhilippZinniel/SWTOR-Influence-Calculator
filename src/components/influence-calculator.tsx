@@ -81,7 +81,7 @@ export default function InfluenceCalculator() {
 
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="space-y-8">
       <Card className="shadow-lg border-primary/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-2"><LucideIcons.Calculator size={24} /> Configuration</CardTitle>
