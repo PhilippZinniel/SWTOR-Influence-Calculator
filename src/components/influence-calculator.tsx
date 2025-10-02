@@ -53,18 +53,40 @@ export default function InfluenceCalculator() {
     }
 
     const selectedLevels = LEVEL_DATA.slice(startLevel - 1, targetLevel - 1);
-    
     const totalXpNeeded = selectedLevels.reduce((sum, level) => sum + level.xpToNextLevel, 0);
+
+    const calculateGiftsForRarity = (rarity: 'artifact' | 'prototype' | 'premium') => {
+      let giftCount = 0;
+      let excessXp = 0;
+
+      for (const level of selectedLevels) {
+        const xpForThisLevel = level.xpToNextLevel - excessXp;
+        if (xpForThisLevel <= 0) {
+          excessXp = -xpForThisLevel;
+          continue;
+        }
+
+        const xpPerGift = level.itemXp[rarity];
+        if (xpPerGift <= 0) continue; // Avoid division by zero
+
+        const giftsNeeded = Math.ceil(xpForThisLevel / xpPerGift);
+        giftCount += giftsNeeded;
+        
+        const xpGained = giftsNeeded * xpPerGift;
+        excessXp = xpGained - xpForThisLevel;
+      }
+      return giftCount;
+    };
+    
+    const artifactCount = calculateGiftsForRarity('artifact');
+    const prototypeCount = calculateGiftsForRarity('prototype');
+    const premiumCount = calculateGiftsForRarity('premium');
 
     const xpRange = {
       artifact: { min: Infinity, max: -Infinity },
       prototype: { min: Infinity, max: -Infinity },
       premium: { min: Infinity, max: -Infinity },
     };
-    
-    let totalArtifactXp = 0;
-    let totalPrototypeXp = 0;
-    let totalPremiumXp = 0;
 
     for (const level of selectedLevels) {
         const itemXpForLevel = level.itemXp;
@@ -74,20 +96,7 @@ export default function InfluenceCalculator() {
         xpRange.prototype.max = Math.max(xpRange.prototype.max, itemXpForLevel.prototype);
         xpRange.premium.min = Math.min(xpRange.premium.min, itemXpForLevel.premium);
         xpRange.premium.max = Math.max(xpRange.premium.max, itemXpForLevel.premium);
-
-        totalArtifactXp += itemXpForLevel.artifact;
-        totalPrototypeXp += itemXpForLevel.prototype;
-        totalPremiumXp += itemXpForLevel.premium;
     }
-    
-    const numLevels = selectedLevels.length;
-    const avgArtifactXp = totalArtifactXp / numLevels;
-    const avgPrototypeXp = totalPrototypeXp / numLevels;
-    const avgPremiumXp = totalPremiumXp / numLevels;
-    
-    const artifactCount = Math.ceil(totalXpNeeded / avgArtifactXp);
-    const prototypeCount = Math.ceil(totalXpNeeded / avgPrototypeXp);
-    const premiumCount = Math.ceil(totalXpNeeded / avgPremiumXp);
     
     setResult({ 
       totalXpNeeded, 
