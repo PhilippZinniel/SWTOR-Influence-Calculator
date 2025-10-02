@@ -220,9 +220,17 @@ export default function InfluenceCalculator() {
       </Card>
 
       <Card className="shadow-lg border-primary/20 bg-card/50 backdrop-blur-sm">
-        <CardHeader>
-          <CardTitle>Results</CardTitle>
-          <CardDescription>Gifts needed to go from level {startLevel} to {targetLevel} for {selectedCompanion.name}.</CardDescription>
+        <CardHeader className="flex flex-row justify-between items-start">
+            <div>
+                <CardTitle>Results</CardTitle>
+                <CardDescription>Gifts needed from level {startLevel} to {targetLevel} for {selectedCompanion.name}.</CardDescription>
+            </div>
+            {result && (
+              <div className="text-right">
+                <p className="text-sm text-muted-foreground">Total XP Needed</p>
+                <p className="text-3xl font-bold text-primary">{result.totalXpNeeded.toLocaleString()}</p>
+              </div>
+            )}
         </CardHeader>
         <CardContent>
           {result ? (
@@ -235,16 +243,11 @@ export default function InfluenceCalculator() {
                       height={80}
                       className="rounded-lg border-2 border-primary"
                   />
-                  <div className="text-left">
-                    <p className="text-sm text-muted-foreground">Total Experience Needed</p>
-                    <p className="text-3xl font-bold text-primary">{result.totalXpNeeded.toLocaleString()}</p>
+                  <div className="flex-1 space-y-3">
+                     <GiftItem rarity="Artifact" gift={selectedCompanion.gifts.artifact} count={result.artifactCount} xpRange={result.xpRange.artifact} />
+                     <GiftItem rarity="Prototype" gift={selectedCompanion.gifts.prototype} count={result.prototypeCount} xpRange={result.xpRange.prototype} />
+                     <GiftItem rarity="Premium" gift={selectedCompanion.gifts.premium} count={result.premiumCount} xpRange={result.xpRange.premium} />
                   </div>
-              </div>
-              <Separator />
-              <div className="space-y-3">
-                 <GiftItem rarity="Artifact" gift={selectedCompanion.gifts.artifact} count={result.artifactCount} xpRange={result.xpRange.artifact} />
-                 <GiftItem rarity="Prototype" gift={selectedCompanion.gifts.prototype} count={result.prototypeCount} xpRange={result.xpRange.prototype} />
-                 <GiftItem rarity="Premium" gift={selectedCompanion.gifts.premium} count={result.premiumCount} xpRange={result.xpRange.premium} />
               </div>
             </div>
           ) : (
