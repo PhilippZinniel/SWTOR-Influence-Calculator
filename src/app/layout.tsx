@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'SWTOR Influence Calculator',
@@ -20,6 +21,13 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
+        <Image
+          src="https://picsum.photos/seed/space/1920/1080"
+          alt="Starry background"
+          fill
+          className="-z-10 object-cover opacity-20"
+          data-ai-hint="space stars"
+        />
         {children}
         <Toaster />
       </body>
