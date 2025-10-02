@@ -24,7 +24,7 @@ type CalculationResult = {
   artifactCount: number;
   prototypeCount: number;
   premiumCount: number;
-  itemXp: {
+  itemXp: { // Note: This is now an approximation for display, using start level values.
     artifact: number;
     prototype: number;
     premium: number;
@@ -53,22 +53,39 @@ export default function InfluenceCalculator() {
     }
 
     let totalXpNeeded = 0;
+    let totalArtifacts = 0;
+    let totalPrototypes = 0;
+    let totalPremiums = 0;
+
     for (let i = startLevel - 1; i < targetLevel - 1; i++) {
-      totalXpNeeded += LEVEL_DATA[i].xpToNextLevel;
+      let xpForLevel = LEVEL_DATA[i].xpToNextLevel;
+      totalXpNeeded += xpForLevel;
+      
+      const itemXpForLevel = LEVEL_DATA[i].itemXp;
+      
+      const artifactCount = Math.floor(xpForLevel / itemXpForLevel.artifact);
+      xpForLevel %= itemXpForLevel.artifact;
+      
+      const prototypeCount = Math.floor(xpForLevel / itemXpForLevel.prototype);
+      xpForLevel %= itemXpForLevel.prototype;
+      
+      const premiumCount = Math.ceil(xpForLevel / itemXpForLevel.premium);
+
+      totalArtifacts += artifactCount;
+      totalPrototypes += prototypeCount;
+      totalPremiums += premiumCount;
     }
     
-    const itemXpForCalc = LEVEL_DATA[startLevel - 1].itemXp;
-    let remainingXp = totalXpNeeded;
-    
-    const artifactCount = Math.floor(remainingXp / itemXpForCalc.artifact);
-    remainingXp %= itemXpForCalc.artifact;
-    
-    const prototypeCount = Math.floor(remainingXp / itemXpForCalc.prototype);
-    remainingXp %= itemXpForCalc.prototype;
-    
-    const premiumCount = Math.ceil(remainingXp / itemXpForCalc.premium);
-    
-    setResult({ totalXpNeeded, artifactCount, prototypeCount, premiumCount, itemXp: itemXpForCalc });
+    // For display purposes, we'll show the XP/item for the starting level.
+    const displayItemXp = LEVEL_DATA[startLevel - 1].itemXp;
+
+    setResult({ 
+      totalXpNeeded, 
+      artifactCount: totalArtifacts, 
+      prototypeCount: totalPrototypes, 
+      premiumCount: totalPremiums,
+      itemXp: displayItemXp 
+    });
   };
   
   const totalGifts = useMemo(() => {
@@ -230,12 +247,10 @@ function GiftItem({ rarity, gifts, count, color, xp }: { rarity: string, gifts: 
             <IconComponent className={cn("h-6 w-6", color)} />
             <div>
                 <p className="font-semibold">{rarity} <span className='text-sm text-muted-foreground'>({gift.name}{gift.type && ` - ${gift.type}`})</span></p>
-                <p className="text-xs text-muted-foreground">{xp.toLocaleString()} XP each</p>
+                <p className="text-xs text-muted-foreground">{xp.toLocaleString()} XP each (at start level)</p>
             </div>
         </div>
         <p className="text-lg font-bold">{count.toLocaleString()}</p>
     </div>
   )
 }
-
-    
