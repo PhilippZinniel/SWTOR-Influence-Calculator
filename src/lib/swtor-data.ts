@@ -1,3 +1,4 @@
+import { LucideIcon } from "lucide-react";
 
 export type LevelData = {
   level: number;
@@ -9,14 +10,20 @@ export type LevelData = {
   }
 };
 
+export type GiftInfo = {
+  icon: string;
+  name: string;
+  type: string;
+};
+
 export type Companion = {
   id: string;
   name: string;
   imageUrl: string;
   gifts: {
-    artifact: string;
-    prototype: string;
-    premium: string;
+    artifact: GiftInfo[];
+    prototype: GiftInfo[];
+    premium: GiftInfo[];
   }
 };
 

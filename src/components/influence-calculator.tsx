@@ -6,8 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription }
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MAX_LEVEL, MIN_LEVEL, Companion } from '@/lib/swtor-data';
-import { Gift, Box, Package, Calculator, MousePointerClick } from 'lucide-react';
+import { MAX_LEVEL, MIN_LEVEL, Companion, GiftInfo } from '@/lib/swtor-data';
+import * as LucideIcons from 'lucide-react';
 import { Separator } from './ui/separator';
 import { cn } from '@/lib/utils';
 
@@ -96,7 +96,7 @@ export default function InfluenceCalculator() {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <Card className="shadow-lg border-primary/20">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2"><Calculator size={24} /> Configuration</CardTitle>
+          <CardTitle className="flex items-center gap-2"><LucideIcons.Calculator size={24} /> Configuration</CardTitle>
           <CardDescription>
             Select a companion and your desired influence level range.
           </CardDescription>
@@ -206,9 +206,9 @@ export default function InfluenceCalculator() {
               </div>
               <Separator />
               <div className="space-y-3">
-                 <GiftItem rarity="Artifact" giftName={selectedCompanion.gifts.artifact} count={result.artifactCount} icon={<Gift className="text-purple-400"/>} xp={result.itemXp.artifact} />
-                 <GiftItem rarity="Prototype" giftName={selectedCompanion.gifts.prototype} count={result.prototypeCount} icon={<Box className="text-blue-400"/>} xp={result.itemXp.prototype}/>
-                 <GiftItem rarity="Premium" giftName={selectedCompanion.gifts.premium} count={result.premiumCount} icon={<Package className="text-green-400"/>} xp={result.itemXp.premium}/>
+                 <GiftItem rarity="Artifact" gifts={selectedCompanion.gifts.artifact} count={result.artifactCount} color="text-purple-400" xp={result.itemXp.artifact} />
+                 <GiftItem rarity="Prototype" gifts={selectedCompanion.gifts.prototype} count={result.prototypeCount} color="text-blue-400" xp={result.itemXp.prototype}/>
+                 <GiftItem rarity="Premium" gifts={selectedCompanion.gifts.premium} count={result.premiumCount} color="text-green-400" xp={result.itemXp.premium}/>
               </div>
               <Separator />
               <div className="text-center p-4 bg-secondary rounded-lg">
@@ -218,7 +218,7 @@ export default function InfluenceCalculator() {
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center h-full text-muted-foreground py-16">
-              <MousePointerClick size={48} className="mb-4" />
+              <LucideIcons.MousePointerClick size={48} className="mb-4" />
               <p>Select a range and calculate to see results.</p>
             </div>
           )}
@@ -228,14 +228,18 @@ export default function InfluenceCalculator() {
   );
 }
 
-function GiftItem({ rarity, giftName, count, icon, xp }: { rarity: string, giftName: string, count: number, icon: React.ReactNode, xp: number }) {
+function GiftItem({ rarity, gifts, count, color, xp }: { rarity: string, gifts: GiftInfo[], count: number, color: string, xp: number }) {
   if (count === 0) return null;
+  const gift = gifts[0];
+  // @ts-ignore
+  const IconComponent = LucideIcons[gift.icon] || LucideIcons.Gift;
+
   return (
     <div className="flex items-center justify-between p-3 bg-background rounded-md border">
         <div className="flex items-center gap-3">
-            {icon}
+            <IconComponent className={cn("h-6 w-6", color)} />
             <div>
-                <p className="font-semibold">{rarity} <span className='text-sm text-muted-foreground'>({giftName})</span></p>
+                <p className="font-semibold">{rarity} <span className='text-sm text-muted-foreground'>({gift.name}{gift.type && ` - ${gift.type}`})</span></p>
                 <p className="text-xs text-muted-foreground">{xp.toLocaleString()} XP each</p>
             </div>
         </div>

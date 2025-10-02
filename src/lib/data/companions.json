@@ -4,9 +4,27 @@
     "name": "2V-R8",
     "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/2vr8.jpg",
     "gifts": {
-      "artifact": "Maintenance (Droid)",
-      "prototype": "Technology",
-      "premium": "Courting"
+      "artifact": [
+        {
+          "icon": "Wrench",
+          "name": "Maintenance",
+          "type": "Droid"
+        }
+      ],
+      "prototype": [
+        {
+          "icon": "Cpu",
+          "name": "Technology",
+          "type": ""
+        }
+      ],
+      "premium": [
+        {
+          "icon": "Heart",
+          "name": "Courting",
+          "type": ""
+        }
+      ]
     }
   },
   {
@@ -14,9 +32,27 @@
     "name": "C2-N2",
     "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/c2n2.jpg",
     "gifts": {
-      "artifact": "Cultural Artifact",
-      "prototype": "Technology",
-      "premium": "Courting"
+      "artifact": [
+        {
+          "icon": "Scroll",
+          "name": "Cultural Artifact",
+          "type": ""
+        }
+      ],
+      "prototype": [
+        {
+          "icon": "Cpu",
+          "name": "Technology",
+          "type": ""
+        }
+      ],
+      "premium": [
+        {
+          "icon": "Heart",
+          "name": "Courting",
+          "type": ""
+        }
+      ]
     }
   },
   {
@@ -24,9 +60,27 @@
     "name": "Khem Val",
     "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/khem-val.jpg",
     "gifts": {
-      "artifact": "Cultural Artifact",
-      "prototype": "Weapon",
-      "premium": "Technology"
+      "artifact": [
+        {
+          "icon": "Scroll",
+          "name": "Cultural Artifact",
+          "type": ""
+        }
+      ],
+      "prototype": [
+        {
+          "icon": "Sword",
+          "name": "Weapon",
+          "type": ""
+        }
+      ],
+      "premium": [
+        {
+          "icon": "Cpu",
+          "name": "Technology",
+          "type": ""
+        }
+      ]
     }
   },
   {
@@ -34,9 +88,27 @@
     "name": "Vette",
     "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/vette.jpg",
     "gifts": {
-      "artifact": "Underworld Good",
-      "prototype": "Technology",
-      "premium": "Imperial Memorabilia"
+      "artifact": [
+        {
+          "icon": "PersonStanding",
+          "name": "Underworld Good",
+          "type": ""
+        }
+      ],
+      "prototype": [
+        {
+          "icon": "Cpu",
+          "name": "Technology",
+          "type": ""
+        }
+      ],
+      "premium": [
+        {
+          "icon": "Medal",
+          "name": "Imperial Memorabilia",
+          "type": ""
+        }
+      ]
     }
   },
   {
@@ -44,9 +116,27 @@
     "name": "Mako",
     "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/mako.jpg",
     "gifts": {
-      "artifact": "Technology",
-      "prototype": "Underworld Good",
-      "premium": "Luxury"
+      "artifact": [
+        {
+          "icon": "Cpu",
+          "name": "Technology",
+          "type": ""
+        }
+      ],
+      "prototype": [
+        {
+          "icon": "PersonStanding",
+          "name": "Underworld Good",
+          "type": ""
+        }
+      ],
+      "premium": [
+        {
+          "icon": "Gem",
+          "name": "Luxury",
+          "type": ""
+        }
+      ]
     }
   },
   {
@@ -54,9 +144,27 @@
     "name": "Kaliyo Djannis",
     "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/kaliyo.jpg",
     "gifts": {
-      "artifact": "Weapon",
-      "prototype": "Underworld Good",
-      "premium": "Luxury"
+      "artifact": [
+        {
+          "icon": "Sword",
+          "name": "Weapon",
+          "type": ""
+        }
+      ],
+      "prototype": [
+        {
+          "icon": "PersonStanding",
+          "name": "Underworld Good",
+          "type": ""
+        }
+      ],
+      "premium": [
+        {
+          "icon": "Gem",
+          "name": "Luxury",
+          "type": ""
+        }
+      ]
     }
   }
 ]
