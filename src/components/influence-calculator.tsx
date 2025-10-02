@@ -7,7 +7,6 @@ import { useToast } from "@/hooks/use-toast";
 import { LEVEL_DATA, ITEM_XP, MAX_LEVEL, MIN_LEVEL } from '@/lib/swtor-data';
 import { Gift, Box, Package, Calculator, MousePointerClick } from 'lucide-react';
 import { Separator } from './ui/separator';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { ScrollArea } from './ui/scroll-area';
 import { cn } from '@/lib/utils';
 
@@ -95,39 +94,32 @@ export default function InfluenceCalculator() {
                     <p className='text-lg font-bold'>{targetLevel}</p>
                 </div>
             </div>
-          <ScrollArea className="h-[300px] border rounded-md">
-            <Table>
-                <TableHeader>
-                    <TableRow>
-                        <TableHead>Level</TableHead>
-                        <TableHead className='text-right'>XP to Next</TableHead>
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    {LEVEL_DATA.map(({level, xpToNextLevel}) => {
-                        const isSelectedStart = level === startLevel;
-                        const isSelectedTarget = level === targetLevel;
-                        const isInRange = level > startLevel && level < targetLevel;
-                        
-                        return (
-                             <TableRow 
-                                key={level} 
-                                onClick={() => handleLevelSelect(level)}
-                                className={cn(
-                                    "cursor-pointer",
-                                    isSelectedStart && "bg-primary/20 hover:bg-primary/30",
-                                    isSelectedTarget && "bg-primary/20 hover:bg-primary/30",
-                                    isInRange && "bg-primary/10",
-                                    !isSelectingStart && level === startLevel && "ring-2 ring-primary"
-                                )}
-                             >
-                                <TableCell className='font-medium'>{level}</TableCell>
-                                <TableCell className='text-right'>{xpToNextLevel > 0 ? xpToNextLevel.toLocaleString() : 'Max'}</TableCell>
-                             </TableRow>
-                        )
-                    })}
-                </TableBody>
-            </Table>
+          <ScrollArea className="h-[340px] border rounded-md p-2">
+            <div className="grid grid-cols-5 gap-2">
+                {LEVEL_DATA.map(({level}) => {
+                    const isSelectedStart = level === startLevel;
+                    const isSelectedTarget = level === targetLevel;
+                    const isInRange = level > startLevel && level < targetLevel;
+                    
+                    return (
+                         <div
+                            key={level} 
+                            onClick={() => handleLevelSelect(level)}
+                            className={cn(
+                                "flex items-center justify-center h-12 text-center font-medium border rounded-md cursor-pointer transition-colors",
+                                isSelectedStart && "bg-primary/20 text-primary-foreground ring-2 ring-primary",
+                                isSelectedTarget && "bg-primary/20 text-primary-foreground ring-2 ring-primary",
+                                isInRange && "bg-primary/10",
+                                !isSelectingStart && level === startLevel && "ring-2 ring-accent",
+                                !isSelectedStart && level === targetLevel && "ring-2 ring-accent",
+                                "hover:bg-primary/10"
+                            )}
+                         >
+                            {level}
+                         </div>
+                    )
+                })}
+            </div>
           </ScrollArea>
         </CardContent>
         <CardFooter>
