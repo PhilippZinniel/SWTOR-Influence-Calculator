@@ -52,59 +52,53 @@ export default function InfluenceCalculator() {
       return;
     }
 
-    let totalXpNeeded = 0;
-    let totalArtifacts = 0;
-    let totalPrototypes = 0;
-    let totalPremiums = 0;
-
     const selectedLevels = LEVEL_DATA.slice(startLevel - 1, targetLevel - 1);
+    
+    const totalXpNeeded = selectedLevels.reduce((sum, level) => sum + level.xpToNextLevel, 0);
 
     const xpRange = {
       artifact: { min: Infinity, max: -Infinity },
       prototype: { min: Infinity, max: -Infinity },
       premium: { min: Infinity, max: -Infinity },
     };
+    
+    let totalArtifactXp = 0;
+    let totalPrototypeXp = 0;
+    let totalPremiumXp = 0;
 
     for (const level of selectedLevels) {
-      let xpForLevel = level.xpToNextLevel;
-      totalXpNeeded += xpForLevel;
+        const itemXpForLevel = level.itemXp;
+        xpRange.artifact.min = Math.min(xpRange.artifact.min, itemXpForLevel.artifact);
+        xpRange.artifact.max = Math.max(xpRange.artifact.max, itemXpForLevel.artifact);
+        xpRange.prototype.min = Math.min(xpRange.prototype.min, itemXpForLevel.prototype);
+        xpRange.prototype.max = Math.max(xpRange.prototype.max, itemXpForLevel.prototype);
+        xpRange.premium.min = Math.min(xpRange.premium.min, itemXpForLevel.premium);
+        xpRange.premium.max = Math.max(xpRange.premium.max, itemXpForLevel.premium);
 
-      const itemXpForLevel = level.itemXp;
-
-      // Update XP ranges
-      xpRange.artifact.min = Math.min(xpRange.artifact.min, itemXpForLevel.artifact);
-      xpRange.artifact.max = Math.max(xpRange.artifact.max, itemXpForLevel.artifact);
-      xpRange.prototype.min = Math.min(xpRange.prototype.min, itemXpForLevel.prototype);
-      xpRange.prototype.max = Math.max(xpRange.prototype.max, itemXpForLevel.prototype);
-      xpRange.premium.min = Math.min(xpRange.premium.min, itemXpForLevel.premium);
-      xpRange.premium.max = Math.max(xpRange.premium.max, itemXpForLevel.premium);
-      
-      const artifactCount = Math.floor(xpForLevel / itemXpForLevel.artifact);
-      xpForLevel %= itemXpForLevel.artifact;
-      
-      const prototypeCount = Math.floor(xpForLevel / itemXpForLevel.prototype);
-      xpForLevel %= itemXpForLevel.prototype;
-      
-      const premiumCount = Math.ceil(xpForLevel / itemXpForLevel.premium);
-
-      totalArtifacts += artifactCount;
-      totalPrototypes += prototypeCount;
-      totalPremiums += premiumCount;
+        // For a more accurate calculation of how many gifts of a single type are needed,
+        // we'll calculate the average XP gain across the range.
+        totalArtifactXp += itemXpForLevel.artifact;
+        totalPrototypeXp += itemXpForLevel.prototype;
+        totalPremiumXp += itemXpForLevel.premium;
     }
+
+    const avgArtifactXp = totalArtifactXp / selectedLevels.length;
+    const avgPrototypeXp = totalPrototypeXp / selectedLevels.length;
+    const avgPremiumXp = totalPremiumXp / selectedLevels.length;
+    
+    const artifactCount = Math.ceil(totalXpNeeded / avgArtifactXp);
+    const prototypeCount = Math.ceil(totalXpNeeded / avgPrototypeXp);
+    const premiumCount = Math.ceil(totalXpNeeded / avgPremiumXp);
     
     setResult({ 
       totalXpNeeded, 
-      artifactCount: totalArtifacts, 
-      prototypeCount: totalPrototypes, 
-      premiumCount: totalPremiums,
+      artifactCount,
+      prototypeCount,
+      premiumCount,
       xpRange
     });
   };
   
-  const totalGifts = useMemo(() => {
-    if (!result) return 0;
-    return result.artifactCount + result.prototypeCount + result.premiumCount;
-  }, [result]);
   
   const levelOptions = LEVEL_DATA.map(l => l.level).filter(l => l < MAX_LEVEL);
   const targetLevelOptions = LEVEL_DATA.map(l => l.level).filter(l => l > MIN_LEVEL && l > startLevel);
@@ -198,7 +192,7 @@ export default function InfluenceCalculator() {
         </CardContent>
         <CardFooter>
           <Button onClick={handleCalculate} className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-            Calculate Optimal Gifts
+            Calculate Gifts Needed
           </Button>
         </CardFooter>
       </Card>
@@ -206,7 +200,7 @@ export default function InfluenceCalculator() {
       <Card className="shadow-lg border-primary/20">
         <CardHeader>
           <CardTitle>Results</CardTitle>
-          <CardDescription>The optimal number of gifts to use for {selectedCompanion.name}.</CardDescription>
+          <CardDescription>Gifts needed to go from level {startLevel} to {targetLevel} for {selectedCompanion.name}.</CardDescription>
         </CardHeader>
         <CardContent>
           {result ? (
@@ -229,11 +223,6 @@ export default function InfluenceCalculator() {
                  <GiftItem rarity="Artifact" gifts={selectedCompanion.gifts.artifact} count={result.artifactCount} color="text-purple-400" xpRange={result.xpRange.artifact} />
                  <GiftItem rarity="Prototype" gifts={selectedCompanion.gifts.prototype} count={result.prototypeCount} color="text-blue-400" xpRange={result.xpRange.prototype} />
                  <GiftItem rarity="Premium" gifts={selectedCompanion.gifts.premium} count={result.premiumCount} color="text-green-400" xpRange={result.xpRange.premium} />
-              </div>
-              <Separator />
-              <div className="text-center p-4 bg-secondary rounded-lg">
-                <p className="text-sm text-muted-foreground">Total Gifts Required</p>
-                <p className="text-3xl font-bold">{totalGifts.toLocaleString()}</p>
               </div>
             </div>
           ) : (
