@@ -12,7 +12,7 @@ import { Separator } from './ui/separator';
 import { cn } from '@/lib/utils';
 import { Label } from '@/components/ui/label';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Info } from "lucide-react";
+import { Info, AlertTriangle } from "lucide-react";
 
 
 import companionsData from '@/lib/data/companions.json';
@@ -70,7 +70,7 @@ export default function InfluenceCalculator() {
         }
 
         const xpPerGift = level.itemXp[rarity];
-        if (xpPerGift <= 0) continue; // Avoid division by zero
+        if (xpPerGift <= 0) return Infinity; // Avoid division by zero and indicate impossibility
 
         const giftsNeeded = Math.ceil(xpForThisLevel / xpPerGift);
         giftCount += giftsNeeded;
@@ -119,10 +119,21 @@ export default function InfluenceCalculator() {
     <div className="space-y-8">
       <Card className="shadow-lg border-primary/20">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2"><LucideIcons.Calculator size={24} /> Configuration</CardTitle>
-          <CardDescription>
-            Select a companion and your desired influence level range.
-          </CardDescription>
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div className='flex-grow'>
+              <CardTitle className="flex items-center gap-2"><LucideIcons.Calculator size={24} /> Configuration</CardTitle>
+              <CardDescription>
+                Select a companion and your desired influence level range.
+              </CardDescription>
+            </div>
+            <Alert className="p-3 border-accent/50 text-accent-foreground [&>svg]:text-accent-foreground max-w-md">
+              <AlertTriangle className="h-4 w-4" />
+              <AlertTitle className="text-sm font-semibold">Legacy Perk Required</AlertTitle>
+              <AlertDescription className="text-xs">
+                Calculations require <strong>Legacy of Altruism III</strong> for accuracy (+30% influence).
+              </AlertDescription>
+            </Alert>
+          </div>
         </CardHeader>
         <CardContent className="space-y-6">
             <div className="space-y-2">
@@ -207,28 +218,6 @@ export default function InfluenceCalculator() {
           </Button>
         </CardFooter>
       </Card>
-      
-      <Alert>
-          <Info className="h-4 w-4" />
-          <AlertTitle>Important Note</AlertTitle>
-          <AlertDescription>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
-              <div className="flex-grow">
-                For these calculations to be accurate, you must have the <strong>Legacy of Altruism III</strong> character perk. 
-                This provides a +30% boost to influence gains from companion gifts. The total cost for all three ranks is 90,000 credits.
-              </div>
-              <a href="https://swtorista.com/articles/swtor-legacy-perks-guide/" target="_blank" rel="noopener noreferrer">
-                <Image
-                  src="https://swtorista.com/articles/wp-content/uploads/2023/11/legacyofaltruism3.png"
-                  alt="Legacy of Altruism III Perk"
-                  width={250}
-                  height={85}
-                  className="rounded-md mt-2 sm:mt-0"
-                />
-              </a>
-            </div>
-          </AlertDescription>
-        </Alert>
 
       <Card className="shadow-lg border-primary/20">
         <CardHeader>
