@@ -2,7 +2,7 @@ import InfluenceCalculator from '@/components/influence-calculator';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12">
+    <main className="flex min-h-screen flex-col items-center justify-start p-4 sm:p-8 md:p-12">
       <div className="w-full max-w-4xl space-y-8">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl font-headline">
