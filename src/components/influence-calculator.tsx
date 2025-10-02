@@ -117,7 +117,7 @@ export default function InfluenceCalculator() {
 
   return (
     <div className="space-y-8">
-      <Card className="shadow-lg border-primary/20 bg-card/50 backdrop-blur-sm">
+      <Card className="shadow-lg border-primary/20 bg-card/30 backdrop-blur-sm">
         <CardHeader>
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
             <div className='flex-1'>
@@ -219,35 +219,35 @@ export default function InfluenceCalculator() {
         </CardFooter>
       </Card>
 
-      <Card className="shadow-lg border-primary/20 bg-card/50 backdrop-blur-sm">
+      <Card className="shadow-lg border-primary/20 bg-card/30 backdrop-blur-sm">
         <CardHeader className="flex flex-row justify-between items-start">
             <div>
                 <CardTitle>Results</CardTitle>
                 <CardDescription>Gifts needed from level {startLevel} to {targetLevel} for {selectedCompanion.name}.</CardDescription>
             </div>
             {result && (
-              <div className="text-right">
-                <p className="text-sm text-muted-foreground">Total XP Needed</p>
-                <p className="text-3xl font-bold text-primary">{result.totalXpNeeded.toLocaleString()}</p>
+              <div className="flex items-center gap-4">
+                 <Image 
+                      src={selectedCompanion.imageUrl}
+                      alt={selectedCompanion.name}
+                      width={60}
+                      height={60}
+                      className="rounded-lg border-2 border-primary"
+                  />
+                <div className="text-right">
+                  <p className="text-sm text-muted-foreground">Total XP Needed</p>
+                  <p className="text-3xl font-bold text-primary">{result.totalXpNeeded.toLocaleString()}</p>
+                </div>
               </div>
             )}
         </CardHeader>
         <CardContent>
           {result ? (
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 rounded-lg">
-                  <Image 
-                      src={selectedCompanion.imageUrl}
-                      alt={selectedCompanion.name}
-                      width={80}
-                      height={80}
-                      className="rounded-lg border-2 border-primary"
-                  />
-                  <div className="flex-1 space-y-3">
-                     <GiftItem rarity="Artifact" gift={selectedCompanion.gifts.artifact} count={result.artifactCount} xpRange={result.xpRange.artifact} />
-                     <GiftItem rarity="Prototype" gift={selectedCompanion.gifts.prototype} count={result.prototypeCount} xpRange={result.xpRange.prototype} />
-                     <GiftItem rarity="Premium" gift={selectedCompanion.gifts.premium} count={result.premiumCount} xpRange={result.xpRange.premium} />
-                  </div>
+              <div className="flex-1 space-y-3">
+                 <GiftItem rarity="Artifact" gift={selectedCompanion.gifts.artifact} count={result.artifactCount} xpRange={result.xpRange.artifact} />
+                 <GiftItem rarity="Prototype" gift={selectedCompanion.gifts.prototype} count={result.prototypeCount} xpRange={result.xpRange.prototype} />
+                 <GiftItem rarity="Premium" gift={selectedCompanion.gifts.premium} count={result.premiumCount} xpRange={result.xpRange.premium} />
               </div>
             </div>
           ) : (
