@@ -2,6 +2,11 @@
 export type LevelData = {
   level: number;
   xpToNextLevel: number;
+  itemXp: {
+    premium: number;
+    prototype: number;
+    artifact: number;
+  }
 };
 
 export type Companion = {

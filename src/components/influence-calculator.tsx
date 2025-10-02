@@ -15,7 +15,7 @@ import companionsData from '@/lib/data/companions.json';
 import influenceData from '@/lib/data/swtor-influence-data.json';
 
 const COMPANIONS: Companion[] = companionsData;
-const { levels: LEVEL_DATA, itemXp: ITEM_XP } = influenceData;
+const LEVEL_DATA = influenceData.levels;
 
 
 type CalculationResult = {
@@ -23,6 +23,11 @@ type CalculationResult = {
   artifactCount: number;
   prototypeCount: number;
   premiumCount: number;
+  itemXp: {
+    artifact: number;
+    prototype: number;
+    premium: number;
+  };
 };
 
 export default function InfluenceCalculator() {
@@ -68,17 +73,18 @@ export default function InfluenceCalculator() {
       totalXpNeeded += LEVEL_DATA[i].xpToNextLevel;
     }
     
+    const itemXpForCalc = LEVEL_DATA[startLevel - 1].itemXp;
     let remainingXp = totalXpNeeded;
     
-    const artifactCount = Math.floor(remainingXp / ITEM_XP.ARTIFACT);
-    remainingXp %= ITEM_XP.ARTIFACT;
+    const artifactCount = Math.floor(remainingXp / itemXpForCalc.artifact);
+    remainingXp %= itemXpForCalc.artifact;
     
-    const prototypeCount = Math.floor(remainingXp / ITEM_XP.PROTOTYPE);
-    remainingXp %= ITEM_XP.PROTOTYPE;
+    const prototypeCount = Math.floor(remainingXp / itemXpForCalc.prototype);
+    remainingXp %= itemXpForCalc.prototype;
     
-    const premiumCount = Math.ceil(remainingXp / ITEM_XP.PREMIUM);
+    const premiumCount = Math.ceil(remainingXp / itemXpForCalc.premium);
     
-    setResult({ totalXpNeeded, artifactCount, prototypeCount, premiumCount });
+    setResult({ totalXpNeeded, artifactCount, prototypeCount, premiumCount, itemXp: itemXpForCalc });
   };
   
   const totalGifts = useMemo(() => {
@@ -200,9 +206,9 @@ export default function InfluenceCalculator() {
               </div>
               <Separator />
               <div className="space-y-3">
-                 <GiftItem rarity="Artifact" giftName={selectedCompanion.gifts.artifact} count={result.artifactCount} icon={<Gift className="text-purple-400"/>} xp={ITEM_XP.ARTIFACT} />
-                 <GiftItem rarity="Prototype" giftName={selectedCompanion.gifts.prototype} count={result.prototypeCount} icon={<Box className="text-blue-400"/>} xp={ITEM_XP.PROTOTYPE}/>
-                 <GiftItem rarity="Premium" giftName={selectedCompanion.gifts.premium} count={result.premiumCount} icon={<Package className="text-green-400"/>} xp={ITEM_XP.PREMIUM}/>
+                 <GiftItem rarity="Artifact" giftName={selectedCompanion.gifts.artifact} count={result.artifactCount} icon={<Gift className="text-purple-400"/>} xp={result.itemXp.artifact} />
+                 <GiftItem rarity="Prototype" giftName={selectedCompanion.gifts.prototype} count={result.prototypeCount} icon={<Box className="text-blue-400"/>} xp={result.itemXp.prototype}/>
+                 <GiftItem rarity="Premium" giftName={selectedCompanion.gifts.premium} count={result.premiumCount} icon={<Package className="text-green-400"/>} xp={result.itemXp.premium}/>
               </div>
               <Separator />
               <div className="text-center p-4 bg-secondary rounded-lg">
