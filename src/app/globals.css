@@ -6,6 +6,25 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.space-bg {
+  background-color: #000010;
+  background-image:
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 30px),
+    radial-gradient(white, rgba(255,255,255,.05) 1px, transparent 20px);
+  background-size: 550px 550px, 350px 350px;
+  background-position: 0 0, 40px 60px;
+  animation: space-scroll 60s linear infinite;
+}
+
+@keyframes space-scroll {
+  from {
+    background-position: 0 0, 40px 60px;
+  }
+  to {
+    background-position: 550px 550px, 390px 410px;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 96.1%;
