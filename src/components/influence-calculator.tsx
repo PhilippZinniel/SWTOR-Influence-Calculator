@@ -233,6 +233,7 @@ export default function InfluenceCalculator() {
                       width={60}
                       height={60}
                       className="rounded-lg border-2 border-primary"
+                      priority
                   />
                 <div className="text-right">
                   <p className="text-sm text-muted-foreground">Total XP Needed</p>
