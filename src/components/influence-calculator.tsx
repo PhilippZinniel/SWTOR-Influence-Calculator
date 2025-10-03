@@ -12,7 +12,9 @@ import { Separator } from './ui/separator';
 import { cn } from '@/lib/utils';
 import { Label } from '@/components/ui/label';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle, Check, ChevronsUpDown } from "lucide-react";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 
 
 import companionsData from '@/lib/data/companions.json';
@@ -38,14 +40,24 @@ export default function InfluenceCalculator() {
   const { toast } = useToast();
   const [startLevel, setStartLevel] = useState<number>(MIN_LEVEL);
   const [targetLevel, setTargetLevel] = useState<number>(MAX_LEVEL);
-  const [selectedCompanionId, setSelectedCompanionId] = useState<string>(COMPANIONS[0].id);
+  const [selectedCompanionId, setSelectedCompanionId] = useState<string | undefined>(undefined);
   const [result, setResult] = useState<CalculationResult | null>(null);
+  const [comboboxOpen, setComboboxOpen] = useState(false);
 
   const selectedCompanion = useMemo(() => {
-    return COMPANIONS.find(c => c.id === selectedCompanionId) || COMPANIONS[0];
+    return COMPANIONS.find(c => c.id === selectedCompanionId);
   }, [selectedCompanionId]);
 
   const handleCalculate = () => {
+    if (!selectedCompanion) {
+      toast({
+        variant: "destructive",
+        title: "No Companion Selected",
+        description: "Please select a companion before calculating.",
+      });
+      return;
+    }
+
     if (startLevel >= targetLevel) {
       toast({
         variant: "destructive",
@@ -70,7 +82,7 @@ export default function InfluenceCalculator() {
         }
 
         const xpPerGift = level.itemXp[rarity];
-        if (xpPerGift <= 0) return Infinity; // Avoid division by zero and indicate impossibility
+        if (xpPerGift <= 0) return Infinity; 
 
         const giftsNeeded = Math.ceil(xpForThisLevel / xpPerGift);
         giftCount += giftsNeeded;
@@ -138,38 +150,69 @@ export default function InfluenceCalculator() {
         <CardContent className="space-y-6">
             <div className="space-y-2">
                 <Label>Companion</Label>
-                <Select value={selectedCompanionId} onValueChange={setSelectedCompanionId}>
-                    <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select a companion">
-                            <div className="flex items-center gap-3">
-                                <Image 
-                                    src={selectedCompanion.imageUrl}
-                                    alt={selectedCompanion.name}
-                                    width={24}
-                                    height={24}
-                                    className="rounded-full"
+                <Popover open={comboboxOpen} onOpenChange={setComboboxOpen}>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      role="combobox"
+                      aria-expanded={comboboxOpen}
+                      className="w-full justify-between"
+                    >
+                      {selectedCompanion ? (
+                        <div className="flex items-center gap-3">
+                          <Image
+                            src={selectedCompanion.imageUrl}
+                            alt={selectedCompanion.name}
+                            width={24}
+                            height={24}
+                            className="rounded-full"
+                          />
+                          <span>{selectedCompanion.name}</span>
+                        </div>
+                      ) : (
+                        "Select a companion..."
+                      )}
+                      <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-full p-0" style={{width: 'var(--radix-popover-trigger-width)'}}>
+                    <Command>
+                      <CommandInput placeholder="Search companion..." />
+                      <CommandList>
+                        <CommandEmpty>No companion found.</CommandEmpty>
+                        <CommandGroup>
+                          {COMPANIONS.map((companion) => (
+                            <CommandItem
+                              key={companion.id}
+                              value={companion.name}
+                              onSelect={() => {
+                                setSelectedCompanionId(companion.id);
+                                setComboboxOpen(false);
+                              }}
+                            >
+                              <Check
+                                className={cn(
+                                  "mr-2 h-4 w-4",
+                                  selectedCompanionId === companion.id ? "opacity-100" : "opacity-0"
+                                )}
+                              />
+                              <div className="flex items-center gap-3">
+                                <Image
+                                  src={companion.imageUrl}
+                                  alt={companion.name}
+                                  width={24}
+                                  height={24}
+                                  className="rounded-full"
                                 />
-                                <span>{selectedCompanion.name}</span>
-                            </div>
-                        </SelectValue>
-                    </SelectTrigger>
-                    <SelectContent>
-                        {COMPANIONS.map((companion) => (
-                            <SelectItem key={companion.id} value={companion.id}>
-                                <div className="flex items-center gap-3">
-                                    <Image 
-                                        src={companion.imageUrl}
-                                        alt={companion.name}
-                                        width={24}
-                                        height={24}
-                                        className="rounded-full"
-                                    />
-                                    <span>{companion.name}</span>
-                                </div>
-                            </SelectItem>
-                        ))}
-                    </SelectContent>
-                </Select>
+                                <span>{companion.name}</span>
+                              </div>
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      </CommandList>
+                    </Command>
+                  </PopoverContent>
+                </Popover>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -213,13 +256,13 @@ export default function InfluenceCalculator() {
             </div>
         </CardContent>
         <CardFooter>
-          <Button onClick={handleCalculate} className="w-full">
+          <Button onClick={handleCalculate} className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
             Calculate Gifts Needed
           </Button>
         </CardFooter>
       </Card>
 
-      <Card className="shadow-lg border-primary/20 bg-card/30 backdrop-blur-sm">
+      {selectedCompanion && <Card className="shadow-lg border-primary/20 bg-card/30 backdrop-blur-sm">
         <CardHeader className="flex flex-row justify-between items-start">
             <div>
                 <CardTitle>Results</CardTitle>
@@ -258,13 +301,13 @@ export default function InfluenceCalculator() {
             </div>
           )}
         </CardContent>
-      </Card>
+      </Card>}
     </div>
   );
 }
 
 function GiftItem({ rarity, gift, count, xpRange }: { rarity: string, gift: GiftInfo, count: number, xpRange: { min: number, max: number } }) {
-  if (count === 0 || !isFinite(count)) return null;
+  if (count === 0 || !isFinite(count) || !gift.name) return null;
   
   const xpText = xpRange.min === xpRange.max
     ? `${xpRange.min.toLocaleString()} XP each`
