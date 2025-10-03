@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
 import { MAX_LEVEL, MIN_LEVEL, Companion, GiftInfo } from '@/lib/swtor-data';
 import * as LucideIcons from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -55,6 +55,15 @@ export default function InfluenceCalculator() {
         description: "Please select a companion before calculating.",
       });
       return;
+    }
+    
+    if (startLevel < MIN_LEVEL || startLevel > MAX_LEVEL || targetLevel < MIN_LEVEL || targetLevel > MAX_LEVEL) {
+        toast({
+            variant: "destructive",
+            title: "Invalid Level Range",
+            description: `Levels must be between ${MIN_LEVEL} and ${MAX_LEVEL}.`,
+        });
+        return;
     }
 
     if (startLevel >= targetLevel) {
@@ -120,10 +129,18 @@ export default function InfluenceCalculator() {
       xpRange
     });
   };
+
+  const handleStartLevelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    const newStartLevel = value === '' ? MIN_LEVEL : Number(value);
+    setStartLevel(newStartLevel);
+  };
   
-  
-  const levelOptions = LEVEL_DATA.map(l => l.level).filter(l => l < MAX_LEVEL);
-  const targetLevelOptions = LEVEL_DATA.map(l => l.level).filter(l => l > MIN_LEVEL && l >= startLevel);
+  const handleTargetLevelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      const newTargetLevel = value === '' ? MIN_LEVEL + 1 : Number(value);
+      setTargetLevel(newTargetLevel);
+  };
 
 
   return (
@@ -216,41 +233,27 @@ export default function InfluenceCalculator() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="start-level">Start Level</Label>
-                <Select
-                  value={String(startLevel)}
-                  onValueChange={(value) => {
-                    const newStartLevel = Number(value);
-                    setStartLevel(newStartLevel);
-                    if (newStartLevel >= targetLevel) {
-                      setTargetLevel(newStartLevel + 1 > MAX_LEVEL ? MAX_LEVEL : newStartLevel + 1);
-                    }
-                  }}
-                >
-                  <SelectTrigger id="start-level">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {levelOptions.map(level => (
-                      <SelectItem key={`start-${level}`} value={String(level)}>{level}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <Input
+                  id="start-level"
+                  type="number"
+                  value={startLevel}
+                  onChange={handleStartLevelChange}
+                  min={MIN_LEVEL}
+                  max={MAX_LEVEL -1}
+                  className="w-full"
+                />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="target-level">Target Level</Label>
-                <Select
-                  value={String(targetLevel)}
-                  onValueChange={(value) => setTargetLevel(Number(value))}
-                >
-                  <SelectTrigger id="target-level">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {targetLevelOptions.map(level => (
-                      <SelectItem key={`target-${level}`} value={String(level)}>{level}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <Input
+                  id="target-level"
+                  type="number"
+                  value={targetLevel}
+                  onChange={handleTargetLevelChange}
+                  min={MIN_LEVEL + 1}
+                  max={MAX_LEVEL}
+                  className="w-full"
+                />
               </div>
             </div>
         </CardContent>
@@ -265,7 +268,7 @@ export default function InfluenceCalculator() {
         <CardHeader className="flex flex-row justify-between items-start">
             <div>
                 <CardTitle>Results</CardTitle>
-                {selectedCompanion ? (
+                {selectedCompanion && result ? (
                     <CardDescription>Gifts needed from level {startLevel} to {targetLevel} for {selectedCompanion.name}.</CardDescription>
                 ) : (
                     <CardDescription>Select a companion and calculate to see results.</CardDescription>
