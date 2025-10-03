@@ -1,0 +1,22 @@
+{
+  "id": "",
+  "name": "",
+  "imageUrl": "",
+  "gifts": {
+    "artifact": {
+      "name": "",
+      "type": "",
+      "imageUrl": ""
+    },
+    "prototype": {
+      "name": "",
+      "type": "",
+      "imageUrl": ""
+    },
+    "premium": {
+      "name": "",
+      "type": "",
+      "imageUrl": ""
+    }
+  }
+}

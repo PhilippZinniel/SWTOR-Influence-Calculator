@@ -121,7 +121,7 @@ export default function InfluenceCalculator() {
         <CardHeader>
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
             <div className='flex-1'>
-              <CardTitle className="flex items-center gap-2"><LucideIcons.Calculator size={24} /> Configuration</CardTitle>
+              <CardTitle className="flex items-center gap-2">Configuration</CardTitle>
               <CardDescription>
                 Select a companion and your desired influence level range.
               </CardDescription>
@@ -291,7 +291,7 @@ function GiftItem({ rarity, gift, count, xpRange }: { rarity: string, gift: Gift
                 }}
              />
             <div>
-                <p className="font-semibold">{rarity} <span className='text-sm text-muted-foreground'>({gift.name}{gift.type && ` - ${gift.type}`})</span></p>
+                <p className="font-semibold">{gift.name} <span className='text-sm text-muted-foreground ml-0.5'>({rarity})</span></p>
                 <p className="text-xs text-muted-foreground">{xpText}</p>
             </div>
         </div>

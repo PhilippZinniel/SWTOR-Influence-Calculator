@@ -1,134 +1,2136 @@
 {
   "companions": [
     {
-      "id": "2v-r8",
-      "name": "2V-R8",
-      "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/2vr8.jpg",
+      "id": "1",
+      "name": "Blizz",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/blizz.jpg",
       "gifts": {
         "artifact": {
-          "name": "Maintenance",
-          "type": "Droid",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/maintenance-purple.png"
+          "name": "Vial of Gree Nanite Paste",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2810712417_4025984662.jpg"
         },
         "prototype": {
-          "name": "Technology",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/technology-blue.png"
+          "name": "Aratech Reconstruction Toolkit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2056673212_2861744855.jpg"
         },
         "premium": {
-          "name": "Courting",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/courting-green.png"
+          "name": "Pinpoint Welding Torch",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3971076619_2086636290.jpg"
         }
       }
     },
     {
-      "id": "c2-n2",
-      "name": "C2-N2",
-      "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/c2n2.jpg",
+      "id": "2",
+      "name": "Gault Rennow",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/gault-rennow.jpg",
       "gifts": {
         "artifact": {
-          "name": "Cultural Artifact",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/cultural-artifact-purple.png"
+          "name": "Intricate Corellian Speeder Model",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/135593193_484662802.jpg"
         },
         "prototype": {
-          "name": "Technology",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/technology-blue.png"
+          "name": "First Edition Galactic Encyclopedia",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1186977257_3019437470.jpg"
         },
         "premium": {
-          "name": "Courting",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/courting-green.png"
+          "name": "Handheld Orrery",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/687254995_3080313447.jpg"
         }
       }
     },
     {
-      "id": "khem-val",
-      "name": "Khem Val",
-      "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/khem-val.jpg",
-      "gifts": {
-        "artifact": {
-          "name": "Cultural Artifact",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/cultural-artifact-purple.png"
-        },
-        "prototype": {
-          "name": "Weapon",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/weapon-blue.png"
-        },
-        "premium": {
-          "name": "Technology",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/technology-green.png"
-        }
-      }
-    },
-    {
-      "id": "vette",
-      "name": "Vette",
-      "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/vette.jpg",
-      "gifts": {
-        "artifact": {
-          "name": "Underworld Good",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/underworld-good-purple.png"
-        },
-        "prototype": {
-          "name": "Technology",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/technology-blue.png"
-        },
-        "premium": {
-          "name": "Imperial Memorabilia",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/imperial-memorabilia-green.png"
-        }
-      }
-    },
-    {
-      "id": "mako",
+      "id": "3",
       "name": "Mako",
-      "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/mako.jpg",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/mako.jpg",
       "gifts": {
         "artifact": {
-          "name": "Technology",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/technology-purple.png"
+          "name": "Vial of Gree Nanite Paste",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2810712417_4025984662.jpg"
         },
         "prototype": {
-          "name": "Underworld Good",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/underworld-good-blue.png"
+          "name": "Aratech Reconstruction Toolkit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2056673212_2861744855.jpg"
         },
         "premium": {
-          "name": "Luxury",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/luxury-green.png"
+          "name": "Pinpoint Welding Torch",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3971076619_2086636290.jpg"
         }
       }
     },
     {
-      "id": "kaliyo-djannis",
-      "name": "Kaliyo Djannis",
-      "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2015/10/kaliyo.jpg",
+      "id": "4",
+      "name": "Skadge",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/skadge.jpg",
       "gifts": {
         "artifact": {
-          "name": "Weapon",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/weapon-purple.png"
+          "name": "Drayen Hyperspace Smuggling Routes",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/687254995_3080313447.jpg"
         },
         "prototype": {
-          "name": "Underworld Good",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/underworld-good-blue.png"
+          "name": "Assassin Droid Target History",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1094688628_3029130025.jpg"
         },
         "premium": {
-          "name": "Luxury",
-          "type": "",
-          "imageUrl": "https://swtorista.com/articles/wp-content/uploads/2016/12/luxury-green.png"
+          "name": "Fake Identity Documents",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2105877577_1681951009.jpg"
+        }
+      }
+    },
+    {
+      "id": "5",
+      "name": "Torian Cadera",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/torian-cadera.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Splinter of a Rakata Stronghold",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2006685813_3996467267.jpg"
+        },
+        "prototype": {
+          "name": "Galactic Crime Lord's ID Card",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/382039274_1509686861.jpg"
+        },
+        "premium": {
+          "name": "Wraid Plate",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3852048814_2722126495.jpg"
+        }
+      }
+    },
+    {
+      "id": "6",
+      "name": "Doctor Lokin",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/doctor-lokin.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Account of the Discovery of Korriban",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2885743550_1885705926.jpg"
+        },
+        "prototype": {
+          "name": "Banned Imperial History Document",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/567040084_811811999.jpg"
+        },
+        "premium": {
+          "name": "Sith Opera Collection",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1876815446_1137457348.jpg"
+        }
+      }
+    },
+    {
+      "id": "7",
+      "name": "Ensign Raina Temple",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/ensign-raina-temple.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Account of the Discovery of Korriban",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2885743550_1885705926.jpg"
+        },
+        "prototype": {
+          "name": "Banned Imperial History Document",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/567040084_811811999.jpg"
+        },
+        "premium": {
+          "name": "Sith Opera Collection",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1876815446_1137457348.jpg"
+        }
+      }
+    },
+    {
+      "id": "8",
+      "name": "Kaliyo Djannis",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/kaliyo-djannis.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Unique Rakata Grenade",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2550951634_3919238875.jpg"
+        },
+        "prototype": {
+          "name": "Energy Blade Bayonet",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3406403632_3257783253.jpg"
+        },
+        "premium": {
+          "name": "High-Resolution Combat Recorder",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/467579580_2120102417.jpg"
+        }
+      }
+    },
+    {
+      "id": "9",
+      "name": "SCORPIO",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/scorpio.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "10",
+      "name": "Vector Hyllus",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/vector-hyllis.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Memoir of the Unification Wars",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3189240322_959787291.jpg"
+        },
+        "prototype": {
+          "name": "Signet Ring of Ancient Tion",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2124751772_207986496.jpg"
+        },
+        "premium": {
+          "name": "Carved Runestone",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2487275859_337978137.jpg"
+        }
+      }
+    },
+    {
+      "id": "11",
+      "name": "Lt. Felix Iresso",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/lt-felix-iresso.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Splinter of a Rakata Stronghold",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2006685813_3996467267.jpg"
+        },
+        "prototype": {
+          "name": "Galactic Crime Lord's ID Card",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/382039274_1509686861.jpg"
+        },
+        "premium": {
+          "name": "Wraid Plate",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3852048814_2722126495.jpg"
+        }
+      }
+    },
+    {
+      "id": "12",
+      "name": "Nadia Grell",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/nadia-grell.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Memoir of the Unification Wars",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3189240322_959787291.jpg"
+        },
+        "prototype": {
+          "name": "Signet Ring of Ancient Tion",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2124751772_207986496.jpg"
+        },
+        "premium": {
+          "name": "Carved Runestone",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2487275859_337978137.jpg"
+        }
+      }
+    },
+    {
+      "id": "13",
+      "name": "Qyzen Fess",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/qyzen-fess.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Unique Rakata Grenade",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2550951634_3919238875.jpg"
+        },
+        "prototype": {
+          "name": "Energy Blade Bayonet",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3406403632_3257783253.jpg"
+        },
+        "premium": {
+          "name": "High-Resolution Combat Recorder",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/467579580_2120102417.jpg"
+        }
+      }
+    },
+    {
+      "id": "14",
+      "name": "Tharan Cedrax",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/tharan-cedrax.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Intricate Corellian Speeder Model",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/135593193_484662802.jpg"
+        },
+        "prototype": {
+          "name": "First Edition Galactic Encyclopedia",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1186977257_3019437470.jpg"
+        },
+        "premium": {
+          "name": "Handheld Orrery",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/687254995_3080313447.jpg"
+        }
+      }
+    },
+    {
+      "id": "15",
+      "name": "Zenith",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/zenith.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Drayen Hyperspace Smuggling Routes",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/687254995_3080313447.jpg"
+        },
+        "prototype": {
+          "name": "Assassin Droid Target History",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1094688628_3029130025.jpg"
+        },
+        "premium": {
+          "name": "Fake Identity Documents",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2105877577_1681951009.jpg"
+        }
+      }
+    },
+    {
+      "id": "16",
+      "name": "Doc",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/doc.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Gree Temporary Mind-Link Device",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3113935666_3898793556.jpg"
+        },
+        "prototype": {
+          "name": "Zeltron Personal Aroma Set",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3758223112_125135982.jpg"
+        },
+        "premium": {
+          "name": "Personalized Holoportrait",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/899065641_3551946699.jpg"
+        }
+      }
+    },
+    {
+      "id": "17",
+      "name": "Fideltin Rusk",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/fideltin-rusk.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Omni-Vision Battlefield Relay",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/4030074139_1498819372.jpg"
+        },
+        "prototype": {
+          "name": "Gourmet Ration Pack",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3823725638_3562767265.jpg"
+        },
+        "premium": {
+          "name": "Premium Field Rations",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1658414750_941173625.jpg"
+        }
+      }
+    },
+    {
+      "id": "18",
+      "name": "Kira Carsen",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/kira-carsen.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Holorecord of the Republic Founding",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1767696557_1587520939.jpg"
+        },
+        "prototype": {
+          "name": "Republic Senatorial Oath",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/561174965_2430790001.jpg"
+        },
+        "premium": {
+          "name": "Canister of Coruscanti Soil",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2382870463_2239843103.jpg"
+        }
+      }
+    },
+    {
+      "id": "19",
+      "name": "Scourge",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/scourge.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Splinter of a Rakata Stronghold",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2006685813_3996467267.jpg"
+        },
+        "prototype": {
+          "name": "Galactic Crime Lord's ID Card",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/382039274_1509686861.jpg"
+        },
+        "premium": {
+          "name": "Wraid Plate",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3852048814_2722126495.jpg"
+        }
+      }
+    },
+    {
+      "id": "20",
+      "name": "T7-O1",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/t7-o1.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Vial of Gree Nanite Paste",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2810712417_4025984662.jpg"
+        },
+        "prototype": {
+          "name": "Aratech Reconstruction Toolkit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2056673212_2861744855.jpg"
+        },
+        "premium": {
+          "name": "Pinpoint Welding Torch",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3971076619_2086636290.jpg"
+        }
+      }
+    },
+    {
+      "id": "21",
+      "name": "Andronikos Revel",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/andronikos-revel.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Unique Rakata Grenade",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2550951634_3919238875.jpg"
+        },
+        "prototype": {
+          "name": "Energy Blade Bayonet",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3406403632_3257783253.jpg"
+        },
+        "premium": {
+          "name": "High-Resolution Combat Recorder",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/467579580_2120102417.jpg"
+        }
+      }
+    },
+    {
+      "id": "22",
+      "name": "Ashara Zavros",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/ashara-zavros.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Holorecord of the Republic Founding",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1767696557_1587520939.jpg"
+        },
+        "prototype": {
+          "name": "Republic Senatorial Oath",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/561174965_2430790001.jpg"
+        },
+        "premium": {
+          "name": "Canister of Coruscanti Soil",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2382870463_2239843103.jpg"
+        }
+      }
+    },
+    {
+      "id": "23",
+      "name": "Khem Val",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/khem-val.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Memoir of the Unification Wars",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3189240322_959787291.jpg"
+        },
+        "prototype": {
+          "name": "Signet Ring of Ancient Tion",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2124751772_207986496.jpg"
+        },
+        "premium": {
+          "name": "Carved Runestone",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2487275859_337978137.jpg"
+        }
+      }
+    },
+    {
+      "id": "24",
+      "name": "Talos Drellik",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/talos-drellik.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Memoir of the Unification Wars",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3189240322_959787291.jpg"
+        },
+        "prototype": {
+          "name": "Signet Ring of Ancient Tion",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2124751772_207986496.jpg"
+        },
+        "premium": {
+          "name": "Carved Runestone",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2487275859_337978137.jpg"
+        }
+      }
+    },
+    {
+      "id": "25",
+      "name": "Xalek",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/xalek.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Omni-Vision Battlefield Relay",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/4030074139_1498819372.jpg"
+        },
+        "prototype": {
+          "name": "Gourmet Ration Pack",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3823725638_3562767265.jpg"
+        },
+        "premium": {
+          "name": "Premium Field Rations",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1658414750_941173625.jpg"
+        }
+      }
+    },
+    {
+      "id": "26",
+      "name": "Broonmark",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/broonmark.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Splinter of a Rakata Stronghold",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2006685813_3996467267.jpg"
+        },
+        "prototype": {
+          "name": "Galactic Crime Lord's ID Card",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/382039274_1509686861.jpg"
+        },
+        "premium": {
+          "name": "Wraid Plate",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3852048814_2722126495.jpg"
+        }
+      }
+    },
+    {
+      "id": "27",
+      "name": "Jaesa Willsaam",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/jaesa-willsaam.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Unique Rakata Grenade",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2550951634_3919238875.jpg"
+        },
+        "prototype": {
+          "name": "Energy Blade Bayonet",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3406403632_3257783253.jpg"
+        },
+        "premium": {
+          "name": "High-Resolution Combat Recorder",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/467579580_2120102417.jpg"
+        }
+      }
+    },
+    {
+      "id": "28",
+      "name": "Lieutenant Pierce",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/lieutenant-pierce.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Omni-Vision Battlefield Relay",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/4030074139_1498819372.jpg"
+        },
+        "prototype": {
+          "name": "Gourmet Ration Pack",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3823725638_3562767265.jpg"
+        },
+        "premium": {
+          "name": "Premium Field Rations",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1658414750_941173625.jpg"
+        }
+      }
+    },
+    {
+      "id": "29",
+      "name": "Malavai Quinn",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/malavai-quinn.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Account of the Discovery of Korriban",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2885743550_1885705926.jpg"
+        },
+        "prototype": {
+          "name": "Banned Imperial History Document",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/567040084_811811999.jpg"
+        },
+        "premium": {
+          "name": "Sith Opera Collection",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1876815446_1137457348.jpg"
+        }
+      }
+    },
+    {
+      "id": "30",
+      "name": "Vette",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/vette.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Drayen Hyperspace Smuggling Routes",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/687254995_3080313447.jpg"
+        },
+        "prototype": {
+          "name": "Assassin Droid Target History",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1094688628_3029130025.jpg"
+        },
+        "premium": {
+          "name": "Fake Identity Documents",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2105877577_1681951009.jpg"
+        }
+      }
+    },
+    {
+      "id": "31",
+      "name": "Akaavi Spar",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/akaavi-spar.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Omni-Vision Battlefield Relay",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/4030074139_1498819372.jpg"
+        },
+        "prototype": {
+          "name": "Gourmet Ration Pack",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3823725638_3562767265.jpg"
+        },
+        "premium": {
+          "name": "Premium Field Rations",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1658414750_941173625.jpg"
+        }
+      }
+    },
+    {
+      "id": "32",
+      "name": "Bowdaar",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/bowdaar.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Intricate Corellian Speeder Model",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/135593193_484662802.jpg"
+        },
+        "prototype": {
+          "name": "First Edition Galactic Encyclopedia",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1186977257_3019437470.jpg"
+        },
+        "premium": {
+          "name": "Handheld Orrery",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/687254995_3080313447.jpg"
+        }
+      }
+    },
+    {
+      "id": "33",
+      "name": "Corso Riggs",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/corso-riggs.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Unique Rakata Grenade",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2550951634_3919238875.jpg"
+        },
+        "prototype": {
+          "name": "Energy Blade Bayonet",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3406403632_3257783253.jpg"
+        },
+        "premium": {
+          "name": "High-Resolution Combat Recorder",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/467579580_2120102417.jpg"
+        }
+      }
+    },
+    {
+      "id": "34",
+      "name": "Guss Tuno",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/guss-tuno.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Holorecord of the Republic Founding",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1767696557_1587520939.jpg"
+        },
+        "prototype": {
+          "name": "Republic Senatorial Oath",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/561174965_2430790001.jpg"
+        },
+        "premium": {
+          "name": "Canister of Coruscanti Soil",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2382870463_2239843103.jpg"
+        }
+      }
+    },
+    {
+      "id": "35",
+      "name": "Risha",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/risha.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Intricate Corellian Speeder Model",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/135593193_484662802.jpg"
+        },
+        "prototype": {
+          "name": "First Edition Galactic Encyclopedia",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1186977257_3019437470.jpg"
+        },
+        "premium": {
+          "name": "Handheld Orrery",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/687254995_3080313447.jpg"
+        }
+      }
+    },
+    {
+      "id": "36",
+      "name": "Aric Jorgan",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/aric-jorgan.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Unique Rakata Grenade",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2550951634_3919238875.jpg"
+        },
+        "prototype": {
+          "name": "Energy Blade Bayonet",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3406403632_3257783253.jpg"
+        },
+        "premium": {
+          "name": "High-Resolution Combat Recorder",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/467579580_2120102417.jpg"
+        }
+      }
+    },
+    {
+      "id": "37",
+      "name": "Elara Dorne",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/elara-dorne.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Account of the Discovery of Korriban",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2885743550_1885705926.jpg"
+        },
+        "prototype": {
+          "name": "Banned Imperial History Document",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/567040084_811811999.jpg"
+        },
+        "premium": {
+          "name": "Sith Opera Collection",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1876815446_1137457348.jpg"
+        }
+      }
+    },
+    {
+      "id": "38",
+      "name": "M1-4X",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/m1-4x.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Holorecord of the Republic Founding",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1767696557_1587520939.jpg"
+        },
+        "prototype": {
+          "name": "Republic Senatorial Oath",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/561174965_2430790001.jpg"
+        },
+        "premium": {
+          "name": "Canister of Coruscanti Soil",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2382870463_2239843103.jpg"
+        }
+      }
+    },
+    {
+      "id": "39",
+      "name": "Tanno Vik",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/tanno-vik.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "40",
+      "name": "Yuun",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/yuun.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Vial of Gree Nanite Paste",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2810712417_4025984662.jpg"
+        },
+        "prototype": {
+          "name": "Aratech Reconstruction Toolkit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2056673212_2861744855.jpg"
+        },
+        "premium": {
+          "name": "Pinpoint Welding Torch",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3971076619_2086636290.jpg"
+        }
+      }
+    },
+    {
+      "id": "41",
+      "name": "C2-N2",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/c2-n2.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Memoir of the Unification Wars",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3189240322_959787291.jpg"
+        },
+        "prototype": {
+          "name": "Signet Ring of Ancient Tion",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2124751772_207986496.jpg"
+        },
+        "premium": {
+          "name": "Carved Runestone",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2487275859_337978137.jpg"
+        }
+      }
+    },
+    {
+      "id": "42",
+      "name": "2V-R8",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/2v-r8.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Memoir of the Unification Wars",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3189240322_959787291.jpg"
+        },
+        "prototype": {
+          "name": "Signet Ring of Ancient Tion",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2124751772_207986496.jpg"
+        },
+        "premium": {
+          "name": "Carved Runestone",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2487275859_337978137.jpg"
+        }
+      }
+    },
+    {
+      "id": "43",
+      "name": "Ak'Ghal Usar",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/akghal-usar.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Memoir of the Unification Wars",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3189240322_959787291.jpg"
+        },
+        "prototype": {
+          "name": "Signet Ring of Ancient Tion",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2124751772_207986496.jpg"
+        },
+        "premium": {
+          "name": "Carved Runestone",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2487275859_337978137.jpg"
+        }
+      }
+    },
+    {
+      "id": "44",
+      "name": "Arcann",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/arcann.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Account of the Discovery of Korriban",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2885743550_1885705926.jpg"
+        },
+        "prototype": {
+          "name": "Banned Imperial History Document",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/567040084_811811999.jpg"
+        },
+        "premium": {
+          "name": "Sith Opera Collection",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1876815446_1137457348.jpg"
+        }
+      }
+    },
+    {
+      "id": "45",
+      "name": "HK-55",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/hk-55.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Omni-Vision Battlefield Relay",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/4030074139_1498819372.jpg"
+        },
+        "prototype": {
+          "name": "Gourmet Ration Pack",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3823725638_3562767265.jpg"
+        },
+        "premium": {
+          "name": "Premium Field Rations",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1658414750_941173625.jpg"
+        }
+      }
+    },
+    {
+      "id": "46",
+      "name": "Jakarro",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/jakarro.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Intricate Corellian Speeder Model",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/135593193_484662802.jpg"
+        },
+        "prototype": {
+          "name": "First Edition Galactic Encyclopedia",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1186977257_3019437470.jpg"
+        },
+        "premium": {
+          "name": "Handheld Orrery",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/687254995_3080313447.jpg"
+        }
+      }
+    },
+    {
+      "id": "47",
+      "name": "Koth Vortena",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/koth-vortena.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "48",
+      "name": "Lana Beniko",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/lana-beniko.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Memoir of the Unification Wars",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3189240322_959787291.jpg"
+        },
+        "prototype": {
+          "name": "Signet Ring of Ancient Tion",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2124751772_207986496.jpg"
+        },
+        "premium": {
+          "name": "Carved Runestone",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2487275859_337978137.jpg"
+        }
+      }
+    },
+    {
+      "id": "49",
+      "name": "Senya Tirall",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/senya-tirall.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Intricate Corellian Speeder Model",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/135593193_484662802.jpg"
+        },
+        "prototype": {
+          "name": "First Edition Galactic Encyclopedia",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1186977257_3019437470.jpg"
+        },
+        "premium": {
+          "name": "Handheld Orrery",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/687254995_3080313447.jpg"
+        }
+      }
+    },
+    {
+      "id": "50",
+      "name": "Theron Shan",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/theron-shan.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Vial of Gree Nanite Paste",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2810712417_4025984662.jpg"
+        },
+        "prototype": {
+          "name": "Aratech Reconstruction Toolkit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2056673212_2861744855.jpg"
+        },
+        "premium": {
+          "name": "Pinpoint Welding Torch",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3971076619_2086636290.jpg"
+        }
+      }
+    },
+    {
+      "id": "51",
+      "name": "Z0-0M",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/z0-0m.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Holorecord of the Republic Founding",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1767696557_1587520939.jpg"
+        },
+        "prototype": {
+          "name": "Republic Senatorial Oath",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/561174965_2430790001.jpg"
+        },
+        "premium": {
+          "name": "Canister of Coruscanti Soil",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2382870463_2239843103.jpg"
+        }
+      }
+    },
+    {
+      "id": "52",
+      "name": "Choza Raabat",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/chozo-raabat.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Holorecord of the Republic Founding",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1767696557_1587520939.jpg"
+        },
+        "prototype": {
+          "name": "Republic Senatorial Oath",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/561174965_2430790001.jpg"
+        },
+        "premium": {
+          "name": "Canister of Coruscanti Soil",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2382870463_2239843103.jpg"
+        }
+      }
+    },
+    {
+      "id": "53",
+      "name": "Deadeye Leyta",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/deadeye-leyta.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Omni-Vision Battlefield Relay",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/4030074139_1498819372.jpg"
+        },
+        "prototype": {
+          "name": "Gourmet Ration Pack",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3823725638_3562767265.jpg"
+        },
+        "premium": {
+          "name": "Premium Field Rations",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1658414750_941173625.jpg"
+        }
+      }
+    },
+    {
+      "id": "54",
+      "name": "Hemdil Tre",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/hemdil-tre.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Account of the Discovery of Korriban",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2885743550_1885705926.jpg"
+        },
+        "prototype": {
+          "name": "Banned Imperial History Document",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/567040084_811811999.jpg"
+        },
+        "premium": {
+          "name": "Sith Opera Collection",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1876815446_1137457348.jpg"
+        }
+      }
+    },
+    {
+      "id": "55",
+      "name": "K'Krohl",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/kkrohl.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Intricate Corellian Speeder Model",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/135593193_484662802.jpg"
+        },
+        "prototype": {
+          "name": "First Edition Galactic Encyclopedia",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1186977257_3019437470.jpg"
+        },
+        "premium": {
+          "name": "Handheld Orrery",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/687254995_3080313447.jpg"
+        }
+      }
+    },
+    {
+      "id": "56",
+      "name": "Rokuss",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/rokuss.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Splinter of a Rakata Stronghold",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2006685813_3996467267.jpg"
+        },
+        "prototype": {
+          "name": "Galactic Crime Lord's ID Card",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/382039274_1509686861.jpg"
+        },
+        "premium": {
+          "name": "Wraid Plate",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3852048814_2722126495.jpg"
+        }
+      }
+    },
+    {
+      "id": "57",
+      "name": "Veeroa Denz",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/veeroa-denz.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Account of the Discovery of Korriban",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2885743550_1885705926.jpg"
+        },
+        "prototype": {
+          "name": "Banned Imperial History Document",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/567040084_811811999.jpg"
+        },
+        "premium": {
+          "name": "Sith Opera Collection",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1876815446_1137457348.jpg"
+        }
+      }
+    },
+    {
+      "id": "58",
+      "name": "Altuur zok Adon",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/altuur.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Immaculate Art of a Kubaz Queen",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/confiscated_artwork.png"
+        },
+        "prototype": {
+          "name": "Succulent Picolet Beetles",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/insecthead.png"
+        },
+        "premium": {
+          "name": "",
+          "type": "Premium",
+          "imageUrl": ""
+        }
+      }
+    },
+    {
+      "id": "59",
+      "name": "Darth Hexid",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/darth-hexid.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Memoir of the Unification Wars",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3189240322_959787291.jpg"
+        },
+        "prototype": {
+          "name": "Signet Ring of Ancient Tion",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2124751772_207986496.jpg"
+        },
+        "premium": {
+          "name": "Carved Runestone",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2487275859_337978137.jpg"
+        }
+      }
+    },
+    {
+      "id": "60",
+      "name": "Gamorrean Guard",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/gamorrean-guard.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Drayen Hyperspace Smuggling Routes",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/687254995_3080313447.jpg"
+        },
+        "prototype": {
+          "name": "Assassin Droid Target History",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1094688628_3029130025.jpg"
+        },
+        "premium": {
+          "name": "Fake Identity Documents",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2105877577_1681951009.jpg"
+        }
+      }
+    },
+    {
+      "id": "61",
+      "name": "Geonosian - Lysslo",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/geonosian-lysslo.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "62",
+      "name": "H2-WF",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/h2-wf.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "63",
+      "name": "HK-51",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/hk-51.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Omni-Vision Battlefield Relay",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/4030074139_1498819372.jpg"
+        },
+        "prototype": {
+          "name": "Gourmet Ration Pack",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3823725638_3562767265.jpg"
+        },
+        "premium": {
+          "name": "Premium Field Rations",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1658414750_941173625.jpg"
+        }
+      }
+    },
+    {
+      "id": "64",
+      "name": "Phrojo Nuray",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/phrojo-nuray.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Omni-Vision Battlefield Relay",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/4030074139_1498819372.jpg"
+        },
+        "prototype": {
+          "name": "Gourmet Ration Pack",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3823725638_3562767265.jpg"
+        },
+        "premium": {
+          "name": "Premium Field Rations",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1658414750_941173625.jpg"
+        }
+      }
+    },
+    {
+      "id": "65",
+      "name": "Quick Vrik",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/quick-vrik.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Vial of Gree Nanite Paste",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2810712417_4025984662.jpg"
+        },
+        "prototype": {
+          "name": "Aratech Reconstruction Toolkit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2056673212_2861744855.jpg"
+        },
+        "premium": {
+          "name": "Pinpoint Welding Torch",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3971076619_2086636290.jpg"
+        }
+      }
+    },
+    {
+      "id": "66",
+      "name": "Treek",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/treek.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Vial of Gree Nanite Paste",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2810712417_4025984662.jpg"
+        },
+        "prototype": {
+          "name": "Aratech Reconstruction Toolkit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2056673212_2861744855.jpg"
+        },
+        "premium": {
+          "name": "Pinpoint Welding Torch",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3971076619_2086636290.jpg"
+        }
+      }
+    },
+    {
+      "id": "67",
+      "name": "A7 Surveillance Droid",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/a7-surveillance-droid.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "68",
+      "name": "Akk Dog",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/akk-dog.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "69",
+      "name": "Annihilator T4-1D",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/annihilator-t4-1d.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "70",
+      "name": "Banshee",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/banshee.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "71",
+      "name": "Bogstalker",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/bogstalker.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "72",
+      "name": "C8-S3C",
+      "imageUrl": "https://swtorista.com/armor/no-image.png",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "73",
+      "name": "D-R3D",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/d-r3d.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "74",
+      "name": "Exoboar",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/exoboar.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "75",
+      "name": "Ginx",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/ginx.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "76",
+      "name": "H1-K1",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/h1-k1.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "77",
+      "name": "I-08",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/i-08.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "78",
+      "name": "IS0-5R",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/is0-5r.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "79",
+      "name": "K1-Z3N",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/k1-z3n.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "80",
+      "name": "Klor'slug Soldier",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/klorslug-soldier.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "81",
+      "name": "Krakjya",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/krakjya.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "82",
+      "name": "Mawvorr",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/mawvorr.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "83",
+      "name": "Nathema Beast",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/nathema-beast.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "84",
+      "name": "Nathema Voreclaw",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/nathema-voreclaw.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "85",
+      "name": "Nexu",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/nexu.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "86",
+      "name": "P3-KP",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/p3-kp.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "87",
+      "name": "Personal Warbot",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/personal-warbot.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "88",
+      "name": "Probe Droid",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/probe-droid.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "89",
+      "name": "Q0-77",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/q0-77.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "90",
+      "name": "Tuk'ata",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/tukata.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "91",
+      "name": "TY-4N",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/ty-4n.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Armor Maintenance",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/416492047_573200913.jpg"
+        },
+        "prototype": {
+          "name": "Routine Maintenance",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3510478548_4112838286.jpg"
+        },
+        "premium": {
+          "name": "Replacement Parts",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/71695478_4116728593.jpg"
+        }
+      }
+    },
+    {
+      "id": "92",
+      "name": "Vine Cat",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/vine-cat.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Spiced Aric Tongue",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/635272428_999542510.jpg"
+        },
+        "prototype": {
+          "name": "Muja Fruit",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2642124291_3327449588.jpg"
+        },
+        "premium": {
+          "name": "Rare Ghoral Bird Egg",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1835899260_4046083645.jpg"
+        }
+      }
+    },
+    {
+      "id": "93",
+      "name": "Wampa",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/wampa.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Account of the Discovery of Korriban",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2885743550_1885705926.jpg"
+        },
+        "prototype": {
+          "name": "Banned Imperial History Document",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/567040084_811811999.jpg"
+        },
+        "premium": {
+          "name": "Sith Opera Collection",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1876815446_1137457348.jpg"
+        }
+      }
+    },
+    {
+      "id": "94",
+      "name": "Dazh Ranos",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/dazh-ranos.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Holorecord of the Republic Founding",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1767696557_1587520939.jpg"
+        },
+        "prototype": {
+          "name": "Republic Senatorial Oath",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/561174965_2430790001.jpg"
+        },
+        "premium": {
+          "name": "Canister of Coruscanti Soil",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2382870463_2239843103.jpg"
+        }
+      }
+    },
+    {
+      "id": "95",
+      "name": "Nico Okarr",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/nico-okarr.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Drayen Hyperspace Smuggling Routes",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/687254995_3080313447.jpg"
+        },
+        "prototype": {
+          "name": "Assassin Droid Target History",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1094688628_3029130025.jpg"
+        },
+        "premium": {
+          "name": "Fake Identity Documents",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2105877577_1681951009.jpg"
+        }
+      }
+    },
+    {
+      "id": "96",
+      "name": "Paxton Rall",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/paxton-rall.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Splinter of a Rakata Stronghold",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2006685813_3996467267.jpg"
+        },
+        "prototype": {
+          "name": "Galactic Crime Lord's ID Card",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/382039274_1509686861.jpg"
+        },
+        "premium": {
+          "name": "Wraid Plate",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/3852048814_2722126495.jpg"
+        }
+      }
+    },
+    {
+      "id": "97",
+      "name": "Shae Vizla",
+      "imageUrl": "https://swtorista.com/companions/images/thumbnails/shae-vizla.jpg",
+      "gifts": {
+        "artifact": {
+          "name": "Account of the Discovery of Korriban",
+          "type": "Artifact",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/2885743550_1885705926.jpg"
+        },
+        "prototype": {
+          "name": "Banned Imperial History Document",
+          "type": "Prototype",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/567040084_811811999.jpg"
+        },
+        "premium": {
+          "name": "Sith Opera Collection",
+          "type": "Premium",
+          "imageUrl": "https://swtorista.com/gifts/images/thumbnails/1876815446_1137457348.jpg"
         }
       }
     }
