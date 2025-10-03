@@ -262,13 +262,17 @@ export default function InfluenceCalculator() {
         </CardFooter>
       </Card>
 
-      {selectedCompanion && <Card className="shadow-lg border-primary/20 bg-card/30 backdrop-blur-sm">
+      <Card className="shadow-lg border-primary/20 bg-card/30 backdrop-blur-sm">
         <CardHeader className="flex flex-row justify-between items-start">
             <div>
                 <CardTitle>Results</CardTitle>
-                <CardDescription>Gifts needed from level {startLevel} to {targetLevel} for {selectedCompanion.name}.</CardDescription>
+                {selectedCompanion ? (
+                    <CardDescription>Gifts needed from level {startLevel} to {targetLevel} for {selectedCompanion.name}.</CardDescription>
+                ) : (
+                    <CardDescription>Select a companion and calculate to see results.</CardDescription>
+                )}
             </div>
-            {result && (
+            {selectedCompanion && result && (
               <div className="flex items-center gap-4">
                  <Image 
                       src={selectedCompanion.imageUrl}
@@ -286,7 +290,7 @@ export default function InfluenceCalculator() {
             )}
         </CardHeader>
         <CardContent>
-          {result ? (
+          {selectedCompanion && result ? (
             <div className="space-y-4">
               <div className="flex-1 space-y-3">
                  <GiftItem rarity="Artifact" gift={selectedCompanion.gifts.artifact} count={result.artifactCount} xpRange={result.xpRange.artifact} />
@@ -297,11 +301,11 @@ export default function InfluenceCalculator() {
           ) : (
             <div className="flex flex-col items-center justify-center h-full text-muted-foreground py-16">
               <LucideIcons.MousePointerClick size={48} className="mb-4" />
-              <p>Select a range and calculate to see results.</p>
+              <p>Select a companion and calculate to see results.</p>
             </div>
           )}
         </CardContent>
-      </Card>}
+      </Card>
     </div>
   );
 }
