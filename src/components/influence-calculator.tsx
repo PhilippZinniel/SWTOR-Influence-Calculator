@@ -21,6 +21,10 @@ import influenceData from '@/lib/data/swtor-influence-data.json';
 
 const COMPANIONS: Companion[] = companionsData.companions;
 const LEVEL_DATA = influenceData.levels;
+const LEVEL_OPTIONS = Array.from({ length: MAX_LEVEL }, (_, i) => ({
+  value: (i + 1).toString(),
+  label: `Level ${i + 1}`,
+}));
 
 
 type CalculationResult = {
@@ -57,7 +61,10 @@ export default function InfluenceCalculator() {
       return;
     }
     
-    if (startLevel < MIN_LEVEL || startLevel > MAX_LEVEL || targetLevel < MIN_LEVEL || targetLevel > MAX_LEVEL) {
+    const parsedStartLevel = startLevel;
+    const parsedTargetLevel = targetLevel;
+
+    if (isNaN(parsedStartLevel) || isNaN(parsedTargetLevel) || parsedStartLevel < MIN_LEVEL || parsedStartLevel > MAX_LEVEL || parsedTargetLevel < MIN_LEVEL || parsedTargetLevel > MAX_LEVEL) {
         toast({
             variant: "destructive",
             title: "Invalid Level Range",
@@ -66,7 +73,7 @@ export default function InfluenceCalculator() {
         return;
     }
 
-    if (startLevel >= targetLevel) {
+    if (parsedStartLevel >= parsedTargetLevel) {
       toast({
         variant: "destructive",
         title: "Invalid Range",
@@ -75,7 +82,7 @@ export default function InfluenceCalculator() {
       return;
     }
 
-    const selectedLevels = LEVEL_DATA.slice(startLevel - 1, targetLevel - 1);
+    const selectedLevels = LEVEL_DATA.slice(parsedStartLevel - 1, parsedTargetLevel - 1);
     const totalXpNeeded = selectedLevels.reduce((sum, level) => sum + level.xpToNextLevel, 0);
 
     const calculateGiftsForRarity = (rarity: 'artifact' | 'prototype' | 'premium') => {
@@ -129,19 +136,6 @@ export default function InfluenceCalculator() {
       xpRange
     });
   };
-
-  const handleStartLevelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    const newStartLevel = value === '' ? MIN_LEVEL : Number(value);
-    setStartLevel(newStartLevel);
-  };
-  
-  const handleTargetLevelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      const value = e.target.value;
-      const newTargetLevel = value === '' ? MIN_LEVEL + 1 : Number(value);
-      setTargetLevel(newTargetLevel);
-  };
-
 
   return (
     <div className="space-y-8">
@@ -233,26 +227,20 @@ export default function InfluenceCalculator() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="start-level">Start Level</Label>
-                <Input
-                  id="start-level"
-                  type="number"
-                  value={startLevel}
-                  onChange={handleStartLevelChange}
-                  min={MIN_LEVEL}
-                  max={MAX_LEVEL -1}
-                  className="w-full"
+                <LevelCombobox
+                    value={startLevel}
+                    onChange={setStartLevel}
+                    min={MIN_LEVEL}
+                    max={MAX_LEVEL - 1}
                 />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="target-level">Target Level</Label>
-                <Input
-                  id="target-level"
-                  type="number"
-                  value={targetLevel}
-                  onChange={handleTargetLevelChange}
-                  min={MIN_LEVEL + 1}
-                  max={MAX_LEVEL}
-                  className="w-full"
+                 <LevelCombobox
+                    value={targetLevel}
+                    onChange={setTargetLevel}
+                    min={MIN_LEVEL + 1}
+                    max={MAX_LEVEL}
                 />
               </div>
             </div>
@@ -349,3 +337,78 @@ function GiftItem({ rarity, gift, count, xpRange }: { rarity: string, gift: Gift
     </div>
   )
 }
+
+function LevelCombobox({ value, onChange, min, max }: { value: number, onChange: (value: number) => void, min: number, max: number }) {
+  const [open, setOpen] = useState(false);
+  const [inputValue, setInputValue] = useState(value.toString());
+
+  const handleSelect = (currentValue: string) => {
+    const numValue = Number(currentValue);
+    if (!isNaN(numValue) && numValue >= min && numValue <= max) {
+      onChange(numValue);
+      setInputValue(currentValue);
+      setOpen(false);
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  };
+  
+  const handleInputBlur = () => {
+    const numValue = Number(inputValue);
+    if (!isNaN(numValue) && numValue >= min && numValue <= max) {
+      onChange(numValue);
+    } else {
+      // Reset to last valid value if input is invalid
+      setInputValue(value.toString());
+    }
+  };
+
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <div className="relative">
+          <Input
+            value={inputValue}
+            onChange={handleInputChange}
+            onBlur={handleInputBlur}
+            type="number"
+            min={min}
+            max={max}
+            className="w-full"
+          />
+          <ChevronsUpDown className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 shrink-0 opacity-50" />
+        </div>
+      </PopoverTrigger>
+      <PopoverContent className="w-[--radix-popover-trigger-width] p-0">
+        <Command>
+          <CommandInput placeholder="Search level..." />
+          <CommandList>
+            <CommandEmpty>No level found.</CommandEmpty>
+            <CommandGroup>
+              {LEVEL_OPTIONS.filter(opt => Number(opt.value) >= min && Number(opt.value) <= max).map((option) => (
+                <CommandItem
+                  key={option.value}
+                  value={option.value}
+                  onSelect={handleSelect}
+                >
+                  <Check
+                    className={cn(
+                      "mr-2 h-4 w-4",
+                      value.toString() === option.value ? "opacity-100" : "opacity-0"
+                    )}
+                  />
+                  {option.label}
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
+  );
+}
+
+    
