@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -51,13 +51,9 @@ export default function InfluenceCalculator() {
     return COMPANIONS.find(c => c.id === selectedCompanionId);
   }, [selectedCompanionId]);
 
-  const handleCalculate = () => {
+  useEffect(() => {
     if (!selectedCompanion) {
-      toast({
-        variant: "destructive",
-        title: "No Companion Selected",
-        description: "Please select a companion before calculating.",
-      });
+      setResult(null);
       return;
     }
     
@@ -65,20 +61,12 @@ export default function InfluenceCalculator() {
     const parsedTargetLevel = targetLevel;
 
     if (isNaN(parsedStartLevel) || isNaN(parsedTargetLevel) || parsedStartLevel < MIN_LEVEL || parsedStartLevel > MAX_LEVEL || parsedTargetLevel < MIN_LEVEL || parsedTargetLevel > MAX_LEVEL) {
-        toast({
-            variant: "destructive",
-            title: "Invalid Level Range",
-            description: `Levels must be between ${MIN_LEVEL} and ${MAX_LEVEL}.`,
-        });
+        setResult(null);
         return;
     }
 
     if (parsedStartLevel >= parsedTargetLevel) {
-      toast({
-        variant: "destructive",
-        title: "Invalid Range",
-        description: "Starting level must be lower than the target level.",
-      });
+      setResult(null);
       return;
     }
 
@@ -135,7 +123,7 @@ export default function InfluenceCalculator() {
       premiumCount,
       xpRange
     });
-  };
+  }, [selectedCompanion, startLevel, targetLevel]);
 
   return (
     <div className="space-y-8">
@@ -245,11 +233,6 @@ export default function InfluenceCalculator() {
               </div>
             </div>
         </CardContent>
-        <CardFooter>
-          <Button onClick={handleCalculate} className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-            Calculate Gifts Needed
-          </Button>
-        </CardFooter>
       </Card>
 
       <Card className="shadow-lg border-primary/20 bg-card/30 backdrop-blur-sm">
@@ -259,7 +242,7 @@ export default function InfluenceCalculator() {
                 {selectedCompanion && result ? (
                     <CardDescription>Gifts needed from level {startLevel} to {targetLevel} for {selectedCompanion.name}.</CardDescription>
                 ) : (
-                    <CardDescription>Select a companion and calculate to see results.</CardDescription>
+                    <CardDescription>Select a companion and set a valid level range.</CardDescription>
                 )}
             </div>
             {selectedCompanion && result && (
@@ -291,7 +274,7 @@ export default function InfluenceCalculator() {
           ) : (
             <div className="flex flex-col items-center justify-center h-full text-muted-foreground py-16">
               <LucideIcons.MousePointerClick size={48} className="mb-4" />
-              <p>Select a companion and calculate to see results.</p>
+              <p>Results will appear here automatically.</p>
             </div>
           )}
         </CardContent>
@@ -342,6 +325,10 @@ function LevelCombobox({ value, onChange, min, max }: { value: number, onChange:
   const [open, setOpen] = useState(false);
   const [inputValue, setInputValue] = useState(value.toString());
 
+  useEffect(() => {
+    setInputValue(value.toString());
+  }, [value]);
+
   const handleSelect = (currentValue: string) => {
     const numValue = Number(currentValue);
     if (!isNaN(numValue) && numValue >= min && numValue <= max) {
@@ -356,13 +343,16 @@ function LevelCombobox({ value, onChange, min, max }: { value: number, onChange:
   };
   
   const handleInputBlur = () => {
-    const numValue = Number(inputValue);
-    if (!isNaN(numValue) && numValue >= min && numValue <= max) {
-      onChange(numValue);
-    } else {
-      // Reset to last valid value if input is invalid
-      setInputValue(value.toString());
+    let numValue = Number(inputValue);
+    if (isNaN(numValue)) {
+      numValue = value; // Reset to last valid value if input is not a number
     }
+    
+    // Clamp the value within the min/max range
+    const clampedValue = Math.max(min, Math.min(max, numValue));
+    
+    onChange(clampedValue);
+    setInputValue(clampedValue.toString());
   };
 
 
@@ -370,18 +360,16 @@ function LevelCombobox({ value, onChange, min, max }: { value: number, onChange:
     <Popover open={open} onOpenChange={setOpen}>
       <div className="relative">
         <Input
+          type="number"
           value={inputValue}
           onChange={handleInputChange}
           onBlur={handleInputBlur}
-          type="number"
-          min={min}
-          max={max}
-          className="w-full pr-8"
+          className="w-full pr-8 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
         />
         <PopoverTrigger asChild>
-          <Button variant="ghost" size="icon" className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8 rounded-md">
-            <ChevronDown className="h-4 w-4 shrink-0 opacity-50" />
-          </Button>
+            <Button variant="ghost" size="icon" className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8 rounded-md">
+              <ChevronDown className="h-4 w-4 shrink-0 opacity-50" />
+            </Button>
         </PopoverTrigger>
       </div>
       <PopoverContent className="w-[--radix-popover-trigger-width] p-0">
@@ -412,5 +400,7 @@ function LevelCombobox({ value, onChange, min, max }: { value: number, onChange:
     </Popover>
   );
 }
+
+    
 
     
